@@ -54,9 +54,9 @@ const Recommendations = () => {
                     />
 
                     <p className='py-4'>
-                        Lewis is an absolute asset to our team, and it's a joy to work alongside him. He is incredibly dilligent,
+                        Lewis is an absolute asset to our team, and it&apos;s a joy to work alongside him. He is incredibly diligent,
                         patient and has great attention to detail, making him an excellent pairing companion.
-                        I've learnt a lot from our time working together, and I have no doubt that Lewis will make a similarly
+                        I&apos;ve learnt a lot from our time working together, and I have no doubt that Lewis will make a similarly
                         impactful contribution to any other engineering roles that he takes on in the future.
                     </p>
                 </motion.div>
@@ -74,13 +74,13 @@ const Recommendations = () => {
                         }}
                     />
                     <p className='py-4'>
-                        Lewis has played a vital role in building ITV News' innovative digital services,
+                        Lewis has played a vital role in building ITV News&apos; innovative digital services,
                         including our market-leading news proposition on our ITVX streaming platform.
-                        He's a very skilled front-end developer who delivers high quality solutions that are used by millions of people.
+                        He&apos;s a very skilled front-end developer who delivers high quality solutions that are used by millions of people.
                         His work is of an excellent standard, and he has the ability to turn his hand to any challenge presented to him,
                         even with tight deadlines. Lewis combines these skills with a passion for detail, and contributes great ideas
-                        for product development. Alongside this he's thoughtful and a pleasure to work with in the team -
-                        he works well with all of his colleagues, he's fun and supportive of others.
+                        for product development. Alongside this he&apos;s thoughtful and a pleasure to work with in the team -
+                        he works well with all of his colleagues, he&apos;s fun and supportive of others.
                     </p>
                 </motion.div>
             </div>

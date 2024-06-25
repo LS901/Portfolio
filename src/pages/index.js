@@ -30,7 +30,7 @@ export default function Home() {
                                 initial={{opacity:0}}
                                 animate={{opacity:1, transition: { duration: 1 }}}>
                         <AnimatedText text="Hey! I'm Lewis" className=' !text-5xl !text-left pb-4 tablet:!text-center tablet:!text-2xl' delay={0.7}/>
-                        <p className='pl-1.5 my-4 text-2xl tablet:!text-lg font-light'>Skilled, passionate & driven front end engineer. Open to work, and looking for his next professional venture. Let's connect and have a chat!
+                        <p className='pl-1.5 my-4 text-2xl tablet:!text-lg font-light'>Skilled, passionate & driven front end engineer. Open to work, and looking for his next professional venture. Let&apos;s connect and have a chat!
                         </p>
                         <div className='flex items-center self-start mt-2 laptop: self-center'>
                             <MotionLink href="/CV.pdf" target={"_blank"}

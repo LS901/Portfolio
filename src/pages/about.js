@@ -48,8 +48,8 @@ const about = () => {
                     <div className='grid w-full grid-cols-9 gap-16 desktop:grid-cols-1 desktop:items-center'>
                         <div className='col-span-3 flex flex-col items-start desktop:order-2 desktop:col-span-1'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-earthTwo'>Biography</h2>
-                            <p className='font-medium'>Hi, I'm Lewis, a Frontend Engineer for ITV: One of the UK's biggest broadcasters. Specfically working within the News team. With a passion for creating highly responsive, functional,
-                                and user-centered digital experiences, I'm looking to work for <span className='font-extra-bold'>you</span> and be your next front end engineer. With 4.5 years of experience in the technology field,
+                            <p className='font-medium'>Hi, I&apos;m Lewis, a Frontend Engineer for ITV: One of the UK&apos;s biggest broadcasters. Specfically working within the News team. With a passion for creating highly responsive, functional,
+                                and user-centered digital experiences, I&apos;m looking to work for <span className='font-extra-bold'>you</span> and be your next front end engineer. With 4.5 years of experience in the technology field,
                                 I am confident in my career path as an engineer, and I am also always looking for ways to develop, learn and grow.</p>
                             <p className='font-medium my-4'>I believe that user experience, performance and aesthetic all lie at the core of front end engineering. I ensure that I keep a user-focused approach in my work
                             at all times. I also make sure to always follow strict coding conventions which lead to highly optimal & readable codebasess. </p>
