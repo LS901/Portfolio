@@ -2,8 +2,7 @@ import '../styles/globals.css'
 import { Montserrat } from "next/font/google"
 import Head from "next/head";
 import NavBar from "@/components/NavBar";
-import Footer from "@/components/footer";
-import profilePic from '../../public/images/profile/homepic.png'
+import Footer from "@/components/Footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
