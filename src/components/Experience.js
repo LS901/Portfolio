@@ -54,7 +54,7 @@ const Experience = () => {
     <div className='mt-32'>
         <AnimatedText text='Experience' className='font-bold text-5xl mt-0 py-20 w-full text-center mb-4 border-t-4 border-earthFive/50 tablet:!text-2xl' />
         <div ref={ref} className='w-[75%] laptop:w-full mx-auto relative'>
-            <ul className= 'w-full flex flex-col items-start justify-between ml-4'>
+            <ul className= 'w-full flex flex-col items-start justify-between ml-4 tablet:ml-0'>
                 <Details
                     delay={0}
                     position="Frontend Engineer"
