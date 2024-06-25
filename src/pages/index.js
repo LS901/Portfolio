@@ -21,7 +21,7 @@ export default function Home() {
             <Layout className='pt-0 bg-opacity-0 tablet:p-8 laptop:pt-0'>
                 <div className="flex items-center laptop:flex-col justify-center w-full">
                     <motion.div
-                        className='w-4/12 laptop:w-7/12 laptop:m-12 tablet:w-full'
+                        className='w-4/12 laptop:w-7/12 laptop:m-12 tablet:!w-full tablet:!mt-8'
                         initial={{opacity:0}}
                         animate={{opacity:1, transition: { duration: 1 }}}>
                         <Image src={profilePic} alt="MyPicture" className='w-auto h-auto rounded-3xl shadow-2xl laptop:w-full laptop:inline-block'/>

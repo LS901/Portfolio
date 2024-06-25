@@ -46,8 +46,8 @@ const NavBar = () => {
 
     return (
         <header className="w-full px-32 laptop:px-8 py-8 font-medium flex items-center justify-between border-b-2 border-dark/30 bg-earthFive bg-opacity-70 relative">
-            <button className='flex flex-col justify-center items-center hidden laptop:flex' onClick={handleClick}>
-                <span className={`bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+            <button className={`flex flex-col justify-center items-center hidden laptop:flex ${isOpen && '-translate-y-1'}`} onClick={handleClick}>
+                <span className={`bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${isOpen ? 'rotate-45 translate-y-2.5' : '-translate-y-0.5'}`}></span>
                 <span className={`bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
                 <span className={`bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm translate-y-0.5 ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
             </button>
