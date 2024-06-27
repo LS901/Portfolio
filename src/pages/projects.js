@@ -40,12 +40,12 @@ const FeaturedProject = ({ title, summary, images, link, specificWork, techUsed,
                 })}
                 <div className='text-center z-50'>
                     <button onClick={handlePrevious} disabled={currentIndex === 0}
-                            className='m-10 tablet:m-8 cursor-pointer rounded-full px-5 border-dark/50 border hover:bg-earthThree
+                            className='m-10 tablet:m-6 cursor-pointer rounded-full px-5 border-dark/50 border hover:bg-earthThree
                          hover:text-light disabled:bg-[#CCCCCC] disabled:text-[#CCCCCC]'>
                         &lt;
                     </button>
                     <button onClick={handleNext} disabled={currentIndex === images.length - 1}
-                            className='m-10 tablet:m-8 cursor-pointer rounded-full px-5 border-dark/50 border hover:bg-earthThree
+                            className='m-10 tablet:m-6 cursor-pointer rounded-full px-5 border-dark/50 border hover:bg-earthThree
                          hover:text-light disabled:bg-[#CCCCCC] disabled:text-[#CCCCCC]'>
                         &gt;
                     </button>
@@ -87,7 +87,7 @@ const variant = {
 const projects = () => {
 
     const itvxTechs = ['JS','TS','React','Next', 'Webpack','HTML/CSS','Node','PNPM','Jest','Cypress', 'Figma', 'REST', 'GraphQL', 'Storybook', 'LaunchDarkly'];
-    const itvNewsTechs = ['Axios', 'Redis', 'Sass','Sitemap', 'Morgan', 'Contentful']
+    const itvNewsTechs = ['Same as above, plus...','Axios', 'Redis', 'Sass','Sitemap', 'Morgan', 'Contentful']
 
     return (
         <>
@@ -124,7 +124,7 @@ const projects = () => {
                                     whileInView='visible'
                                     viewport={{once: true}}>
                             <FeaturedProject
-                                title="ITVX Regional News Content"
+                                title="ITVX Regional News"
                                 images={[regionalPlaceholder, regionGrid, regionalRail]}
                                 summary="A recent feature in which we wanted to allow our users to be able to watch news content tied to a specific region.
                             I was a lead developer in this project."
@@ -134,7 +134,6 @@ const projects = () => {
                                     'Implementation of the logic around the region select and the page dynamically rerendering accordingly. ' +
                                     'Implementation of the logic around either a users location being used from their profile, or a location being read from local storage if a region has already been selected.']}
                                 techUsed={itvxTechs}
-                                className={'tablet:!top-[88px]'}
                             />
                         </motion.div>
                         <motion.div className='col-span-12'
@@ -143,7 +142,7 @@ const projects = () => {
                                     whileInView='visible'
                                     viewport={{once: true}}>
                             <FeaturedProject
-                                title="ITVX 2024 Elections & Future Events"
+                                title="ITVX Future Events"
                                 images={[ukElection, usaElection]}
                                 summary="A current project in which we are setting up a temporary seat counter for the UK election in July. And a new portrait
                                 tile slider on ITVX browser/CTV for event based news (e.g when the USA election will take place)."
@@ -152,7 +151,6 @@ const projects = () => {
                                     'Implement the back end logic for filtering results returned from the query, the filtering depends on whether the event based slider or default slider should render.', '' +
                                     'Building of the UK Election 2024 banner which dynamically updates the seats value for each party, ready for the July election. This includes back-end, API & post data processing logic.']}
                                 techUsed={itvNewsTechs}
-                                className={'tablet:!top-[88px]'}
                             />
                         </motion.div>
                     </div>
