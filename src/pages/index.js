@@ -32,7 +32,7 @@ export default function Home() {
                                     className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-8 flex items-center justify-center'
                                     whileHover={{scale: 1.1}}
                                     download={true}
-                        >Download CV<LinkArrow className='w-5 h-5 ml-2'/></MotionLink>
+                        >Download CV</MotionLink>
                     </div>
                     <div className='grid grid-cols-2 laptop:grid-cols-1 px-12'>
                         <div className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:mr-0 mr-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
