@@ -47,6 +47,7 @@ const NavBar = () => {
 
     return (
         <header className={`font-rubik px-10 laptop:px-8 py-6 flex items-center justify-between bg-lightGrey rounded-xl z-10`}>
+            <h1 className={`text-orange font-extrabold text-lg hidden laptop:flex`}>Lewis Saunders</h1>
             <button className={`flex flex-col justify-center items-center hidden laptop:flex ${isOpen && '-translate-y-1'}`} onClick={handleClick}>
                 <span className={`bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm -translate-y-0.5 ${isOpen ? 'rotate-45 translate-y-2.5' : '-translate-y-0.5'}`}></span>
                 <span className={`bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
@@ -86,8 +87,6 @@ const NavBar = () => {
                               whileHover={{y:-2}}  whileTap={{scale:0.9}} className='w-6 mr-3 laptop:mx-1'><LinkedInIcon /></motion.a>
                     <motion.a href="https://github.com/LS901" target={"_blank"}
                               whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 mx-3 rounded-full laptop:mx-1'><GithubIcon /></motion.a>
-                    <motion.a href="https://www.youtube.com/@lewz1" target={"_blank"}
-                              whileHover={{y:-2}} whileTap={{scale:0.9}} className='w-6 ml-3 rounded-full laptop:mx-1'><YoutubeIcon /></motion.a>
                 </nav>
             </motion.div> : null }
         </header>

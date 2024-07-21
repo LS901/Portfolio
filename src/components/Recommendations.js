@@ -15,9 +15,9 @@ return {
 }
 const Recommendations = () => {
     return (
-        <>
-            <AnimatedText text='Don&#39;t just take my word for it ...' className='font-bold text-5xl mt-32 py-20 w-full text-center mb-4 desktop:mb-0 border-t-4 border-earthFive/50 tablet:!text-xl' />
-            <div className= 'w-full h-auto relative grid-cols-3 grid desktop:grid-cols-1'>
+        <div className='bg-lightGrey'>
+            <AnimatedText text='Testimonials' className='font-rubik font-bold laptop:!text-2xl !text-3xl px-20 w-full text-start mb-4' />
+            <div className= 'w-full h-auto relative grid-cols-3 grid laptop:px-16 px-20 desktop:grid-cols-1 font-montLight'>
                 <motion.div className='border border-dark/50 p-8 mr-4 rounded-lg shadow-lg desktop:m-4'
                             variants={variant(0)}
                             initial='hidden'
@@ -28,7 +28,7 @@ const Recommendations = () => {
                         description="Lead Front End Engineer - ITV"
                         avatarProps={{
                           name: 'JA',
-                          className: 'bg-green-900/60'
+                          className: 'bg-orange/80'
                         }}
                     />
                     <p className='py-4'>
@@ -49,7 +49,7 @@ const Recommendations = () => {
                         description="Core Front End Engineer - ITV"
                         avatarProps={{
                             name: 'EG',
-                            className: 'bg-green-900/60'
+                            className: 'bg-orange/80'
                         }}
                     />
 
@@ -70,7 +70,7 @@ const Recommendations = () => {
                         description="Head Of Product - News - ITV"
                         avatarProps={{
                             name: 'IS',
-                            className: 'bg-green-900/60'
+                            className: 'bg-orange/80'
                         }}
                     />
                     <p className='py-4'>
@@ -84,7 +84,7 @@ const Recommendations = () => {
                     </p>
                 </motion.div>
             </div>
-        </>
+        </div>
     )
 }
 

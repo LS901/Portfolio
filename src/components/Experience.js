@@ -7,10 +7,12 @@ import AnimatedText from "@/components/AnimatedText";
 const experienceTransition = (delay) => {
     return {
         hidden: {
+            y: -20,
             opacity: 0,
         },
         visible: {
             opacity: 1,
+            y:0,
             transition: {
                 duration: 0.5,
                 delay
@@ -22,20 +24,19 @@ const Details = ({position, company, companyLink, time, location, work, delay}) 
     const ref = useRef(null);
     return (
     <motion.li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] tablet:w-full mx-auto flex flex-col items-center justify-between'
-               variants={experienceTransition(delay)}
+               variants={experienceTransition(0)}
                whileInView='visible'
                viewport={{ once: true}}
                initial='hidden'>
-        <LiIcon className="tablet:hidden"></LiIcon>
         <div>
-            <h3 className='capitalize font-bold text-2xl tablet:text-xl'>{position}&nbsp;<a href={companyLink}
+            <h3 className='font-rubik capitalize font-bold text-2xl tablet:text-xl'>{position}&nbsp;<a href={companyLink}
             target="_blank"
-            className="text-emerald-700 capitalize font-extra-boldbold"
+            className="capitalize font-extra-boldbold"
             >@{company}</a></h3>
-            <span className='capitalize font-medium text-dark/75' >
+            <span className='text-orange font-montLight capitalize font-extrabold' >
                 {time} | {location}
             </span>
-            <p className='font-medium w-full'>
+            <p className='font-montLight font-medium w-full'>
                 {work}
             </p>
         </div>
@@ -51,8 +52,8 @@ const Experience = () => {
     })
 
     return (
-    <div className='mt-32'>
-        <AnimatedText text='Experience' className='font-bold text-5xl mt-0 py-20 w-full text-center mb-4 border-t-4 border-earthFive/50 tablet:!text-2xl' />
+    <div className='bg-lightGrey laptop:px-16'>
+        <AnimatedText text='Experience' className='font-rubik font-bold !text-3xl py-20 w-full text-center mb-4 desktop:mb-0 laptop:!text-2xl' />
         <div ref={ref} className='w-[75%] laptop:w-full mx-auto relative'>
             <ul className= 'w-full flex flex-col items-start justify-between ml-4 tablet:ml-0'>
                 <Details
@@ -91,11 +92,11 @@ const Experience = () => {
                 />
             </ul>
             <motion.p className='mt-24 p-5 text-center'
-                      variants={experienceTransition(1.5)}
+                      variants={experienceTransition(1)}
                       whileInView='visible'
                       viewport={{ once: true}}
                       initial='hidden'>For further details of my past experience, take a look at my&nbsp;
-                <Link href="/CV.pdf" target={"_blank"} download={true}><strong className='hover:underline cursor-pointer' href="/CV.pdf">CV</strong></Link>
+                <Link href="/CV.pdf" target={"_blank"} download={true}><strong className='hover:underline cursor-pointer text-orange' href="/CV.pdf">CV</strong></Link>
             </motion.p>
         </div>
     </div>

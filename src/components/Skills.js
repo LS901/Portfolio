@@ -59,17 +59,17 @@ const Skill = ({name, image, className, delay}) => {
 }
 const Skills = () => {
     return (
-        <div className='px-10 flex flex-col font-rubik'>
-            <AnimatedText text='Primary Skills' className='text-3xl pb-5 w-full text-left tablet:!text-xl font-extrabold' />
+        <div className='px-10 flex flex-col font-rubik '>
+            <AnimatedText text='Primary Skills' className='text-3xl pb-5 w-full text-left tablet:!text-2xl font-extrabold' />
             <div className='h-auto relative grid-cols-4 tablet:grid-cols-2 grid bg-gray-200 py-10 rounded-3xl shadow-2xl'>
-                <Skill name='CSS' image={CSSImage} className='h-16' delay={0}></Skill>
+                <Skill name='CSS' image={CSSImage} className='h-16' delay={0.2}></Skill>
                 <Skill name='HTML' image={HTMLImage} className='h-16 w-16' delay={0.2}></Skill>
-                <Skill name='JavaScript' image={JSImage} delay={0.4}></Skill>
-                <Skill name='React.JS' image={ReactImage} className='h-16 w-24' delay={0.6}></Skill>
-                <Skill name='Next.JS' image={NextImage} delay={0.8}></Skill>
-                <Skill name='TypeScript' image={TSImage}  delay={1.0}></Skill>
-                <Skill name='Ruby' image={RubyImage}  delay={1.2}></Skill>
-                <Skill name='SQL' image={SQLImage}  delay={1.4}></Skill>
+                <Skill name='JavaScript' image={JSImage} delay={0.2}></Skill>
+                <Skill name='React.JS' image={ReactImage} className='h-16 w-24' delay={0.2}></Skill>
+                <Skill name='Next.JS' image={NextImage} delay={0.4}></Skill>
+                <Skill name='TypeScript' image={TSImage}  delay={0.4}></Skill>
+                <Skill name='Ruby' image={RubyImage}  delay={0.4}></Skill>
+                <Skill name='SQL' image={SQLImage}  delay={0.4}></Skill>
             </div>
         </div>
     )

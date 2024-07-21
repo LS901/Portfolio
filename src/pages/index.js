@@ -1,7 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Layout from "@/components/Layout";
-import profilePic from '../../public/images/profile/homepic.png'
 import AnimatedText from "@/components/AnimatedText";
 import Link from "next/link";
 import {motion} from "framer-motion";
@@ -10,6 +7,7 @@ import Transition from "@/components/Transition";
 import Skills from "@/components/Skills";
 import React from "react";
 import GetInTouch from "@/components/GetInTouch";
+import Banner from "@/components/Banner";
 
 const MotionLink = motion(Link)
 export default function Home() {
@@ -21,43 +19,35 @@ export default function Home() {
       </Head>
         <Transition></Transition>
         <main className='flex flex-col items-center text-dark w-full min-h-screen'>
-                <div className="font-rubik flex laptop:flex-col justify-start w-full h-[800px]">
-                    <motion.div className='w-2/3 laptop:w-fit pl-6 flex flex-col self-end p-8 ml-12 mb-8 rounded-lg laptop:ml-0'
-                                initial={{opacity:0}}
-                                animate={{opacity:1, transition: { duration: 1 }}}>
-                        <AnimatedText text="Hi I'm Lewis," className='font-extrabold text-lightGrey !text-7xl !text-left tablet:!text-center tablet:!text-2xl' delay={0.5}/>
-                        <p className='self-start font-extrabold text-lightGrey pl-1.5 text-7xl tablet:!text-lg'>a passionate and driven front end engineer.
-                        </p>
-                    </motion.div>
-                </div>
+                <Banner heading="Hi, I'm Lewis" body="a passionate and driven front end engineer." className='w-screen laptop:max-h-[450px]'/>
                 <div className='bg-lightGrey'>
                     <div className='py-24 px-12 flex flex-col'>
-                        <p className='font-light w-2/3 leading-7'>
+                        <p className='font-light w-2/3 laptop:w-full leading-7'>
                             Experienced Front End Engineer with a strong proficiency in modern front end technologies. Focused on JavaScript, React.js,
                             Next.js and TypeScript. Experienced with all Agile development methodologies such as Kanban, Scrum and Scrumban. Highly
                             driven, motivated and quick to pick up new technologies, with a proven track record developing visible front-end services to strict
                             deadlines.
                         </p>
                         <MotionLink href="CV.pdf" target={"_blank"}
-                                    className='font-extrabold rounded-3xl py-6 text-white w-1/3 bg-orange h-2 my-8 flex items-center justify-center'
+                                    className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-8 flex items-center justify-center'
                                     whileHover={{scale: 1.1}}
                                     download={true}
-                        >Download CV<LinkArrow className='w-4 ml-2'/></MotionLink>
+                        >Download CV<LinkArrow className='w-5 h-5 ml-2'/></MotionLink>
                     </div>
-                    <div className='grid grid-cols-2 px-12'>
-                        <div className='shadow-2xl flex flex-col items-start justify-end col-span-1 mr-8 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
-                            <AnimatedText text="Projects" className='font-extrabold text-lightGrey text-4xl text-left tablet:!text-center tablet:!text-2xl'/>
-                            <p className='pt-3 font-thin text-lightGrey text-xl text-left tablet:!text-center tablet:!text-2xl'>A collection of my personal projects and work I have done whilst at ITV</p>
+                    <div className='grid grid-cols-2 laptop:grid-cols-1 px-12'>
+                        <div className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:mr-0 mr-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
+                            <AnimatedText text="Projects" className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'/>
+                            <p className='pt-3 font-thin text-lightGrey text-xl text-left laptop:!text-2xl'>A collection of my personal projects and work I have done whilst at ITV</p>
                             <MotionLink href="/projects"
-                                        className='font-extrabold rounded-3xl py-6 text-white w-1/3 bg-orange h-2 my-6 flex items-center justify-center'
+                                        className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-6 flex items-center justify-center'
                                         whileHover={{scale: 1.1}}
                             >View Projects</MotionLink>
                         </div>
-                        <div className='shadow-2xl flex flex-col items-start justify-end col-span-1 ml-8 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
-                            <AnimatedText text="About" className='font-extrabold text-lightGrey text-4xl text-left tablet:!text-center tablet:!text-2xl'/>
-                            <p className='pt-3 font-thin text-lightGrey text-xl text-left tablet:!text-center tablet:!text-2xl'>Learn a little bit more about me, including my previous experience and recommendations from colleagues</p>
+                        <div className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:ml-0 ml-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
+                            <AnimatedText text="About" className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'/>
+                            <p className='pt-3 font-thin text-lightGrey text-xl text-left laptop:!text-2xl'>Learn a little bit more about me, including my previous experience and recommendations from colleagues</p>
                             <MotionLink href="/about"
-                                        className='font-extrabold rounded-3xl py-6 text-white w-1/3 bg-orange h-2 my-6 flex items-center justify-center'
+                                        className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-6 flex items-center justify-center'
                                         whileHover={{scale: 1.1}}
                             >Learn More</MotionLink>
                         </div>

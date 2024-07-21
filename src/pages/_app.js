@@ -10,16 +10,10 @@ export const rubik = Rubik({
     variable: "--font-rubik",
     weight: '500'
 })
-export const montserratLight = Montserrat({
+export const mont = Montserrat({
   subsets: ["latin"],
   variable: "--font-mont-light",
   weight: '400'
-})
-
-export const montserratHeavy = Montserrat({
-    subsets: ["latin"],
-    variable: "--font-mont-heavy",
-    weight: '700'
 })
 
 export default function App({ Component, pageProps }) {
@@ -29,7 +23,7 @@ export default function App({ Component, pageProps }) {
               <meta name="viewport" content="width=device-width, initial-scale=1" />
               <link rel="icon" href="/favicon.ico" />
           </Head>
-          <main className={`${rubik.variable} w-full min-h-screen bg-background`}>
+          <main className={`${rubik.variable} ${mont.variable} w-screen min-h-screen bg-background bg-center`}>
               <div className='p-6'>
                   <NavBar />
               </div>
