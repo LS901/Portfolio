@@ -10,8 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'background': "url('../../public/images/background.jpg')",
+      },
       fontFamily: {
-        mont: ['var(--font-mont)', ...fontFamily.sans]
+        montLight: ['var(--font-mont-light)', ...fontFamily.sans],
+        montHeavy: ['var(--font-mont-heavy)', ...fontFamily.sans],
+        rubik: ['var(--font-rubik)', ...fontFamily.sans]
       },
       colors: {
         dark: "#1b1b1b",
@@ -22,7 +27,10 @@ module.exports = {
         earthTwo: "#865D36",
         earthThree: "#93785B",
         earthFour: "#AC8968",
-        earthFive: "#A69080"
+        earthFive: "#A69080",
+        darkGrey: '#041E2B',
+        lightGrey: '#F8F6F5',
+        orange: '#FF5C00'
       },
       fontWeight: {
         'extra-bold': 1000
