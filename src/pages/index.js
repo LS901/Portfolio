@@ -10,6 +10,12 @@ import GetInTouch from "@/components/GetInTouch";
 import Banner from "@/components/Banner";
 
 const MotionLink = motion(Link)
+
+const variant = {
+    hidden: { opacity: 0, y:-50 },
+    visible: { opacity: 100, y:0, transition: { duration: 0.5 }
+    }
+};
 export default function Home() {
   return (
     <>
@@ -35,22 +41,30 @@ export default function Home() {
                         >Download CV</MotionLink>
                     </div>
                     <div className='grid grid-cols-2 laptop:grid-cols-1 px-12'>
-                        <div className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:mr-0 mr-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
-                            <AnimatedText text="Projects" className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'/>
+                        <motion.div
+                            variants={variant}
+                            initial='hidden'
+                            whileInView='visible'
+                            className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:mr-0 mr-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
+                            <h1 className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'>Projects</h1>
                             <p className='pt-3 font-thin text-lightGrey text-xl text-left laptop:!text-2xl'>A collection of my personal projects and work I have done whilst at ITV</p>
                             <MotionLink href="/projects"
                                         className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-6 flex items-center justify-center'
                                         whileHover={{scale: 1.1}}
                             >View Projects</MotionLink>
-                        </div>
-                        <div className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:ml-0 ml-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
-                            <AnimatedText text="About" className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'/>
+                        </motion.div>
+                        <motion.div
+                            variants={variant}
+                            initial='hidden'
+                            whileInView='visible'
+                            className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:ml-0 ml-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
+                            <h1 className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'>About</h1>
                             <p className='pt-3 font-thin text-lightGrey text-xl text-left laptop:!text-2xl'>Learn a little bit more about me, including my previous experience and recommendations from colleagues</p>
                             <MotionLink href="/about"
                                         className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-6 flex items-center justify-center'
                                         whileHover={{scale: 1.1}}
                             >Learn More</MotionLink>
-                        </div>
+                        </motion.div>
                     </div>
                     <Skills />
                     <GetInTouch />

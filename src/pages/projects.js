@@ -10,7 +10,7 @@ import itvData from '../metadata/itv-project-data.json'
 import personalData from '../metadata/personal-project-data.json'
 
 const MotionLink = motion(Link);
-const FeaturedProject = ({ title, summary, image, skills, index, uiLink, gitLink, isPersonal = false }) => {
+const FeaturedProject = ({ title, summary, image, skills, index, uiLink, gitLink, responsive, isPersonal = false }) => {
     return(
         <article
         className = {`w-full flex flex-col laptop:items-center ${index % 2 === 0 ? 'items-start' : 'items-end'} flex bg-light/80 shadow-2xl p-12 tablet:p-10 pt-16`}>
@@ -24,6 +24,7 @@ const FeaturedProject = ({ title, summary, image, skills, index, uiLink, gitLink
                     <div className='row-span-1'>
                         <h2 className='font-rubik my-5 w-full text-left text-4xl font-extrabold py-2 '>{title}</h2>
                         <p className='font-rubik mb-4 font-medium text-dark'>{summary}</p>
+                        <p className='font-rubik mb-4 font-medium text-dark'><em>Responsive? {responsive}</em></p>
                         <div className='font-light text-orange'>
                             {skills.map((e,index) => (
                                 // eslint-disable-next-line react/jsx-key
@@ -92,16 +93,14 @@ const Projects = () => {
                                         uiLink={p.uiLink}
                                         skills={p.primaryTechsUsed}
                                         index={index}
+                                        responsive={p.responsive}
                                     />
                                 </motion.div>
                             ))) : (
                             personalData.map((p,index) => (
                                 <motion.div className='col-span-4'
                                             key={p.uid}
-                                            variants={variant}
-                                            initial='hidden'
-                                            whileInView='visible'
-                                            viewport={{once: true}}>
+                                            >
                                     <FeaturedProject
                                         title={p.title}
                                         image={p.mainImage}
@@ -111,6 +110,7 @@ const Projects = () => {
                                         skills={p.primaryTechsUsed}
                                         index={index}
                                         isPersonal
+                                        responsive={p.responsive}
                                     />
                                 </motion.div>
                         )))

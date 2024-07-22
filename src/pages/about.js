@@ -62,6 +62,26 @@ const about = () => {
                             <Image src={profilePicture} alt='Lewis Saunders' className='w-full h-auto desktop:order-1 '></Image>
                         </div>
                     </div>
+                <div className='w-full p-20 flex items-center justify-between bg-lightGrey'>
+                    <div className='flex flex-col items-end justify-center desktop:items-center tablet:!justify-start'>
+                                <span className='inline-block text-7xl font-bold tablet:!text-3xl desktop:text-5xl'>
+                                    ~<AnimatedNumbers value={8} />M
+                                </span>
+                        <h2 className='text-xl font-medium capitalize text-dark/75 desktop:text-center desktop:text-medium tablet:!text-small'>Monthly Active Users for the ITV News Site</h2>
+                    </div>
+                    <div className='flex flex-col items-end justify-center desktop:items-center desktop:self-start'>
+                                <span className='inline-block text-7xl font-bold desktop:text-5xl tablet:!text-3xl'>
+                                    <AnimatedNumbers value={4} />+
+                                </span>
+                        <h2 className='text-xl font-medium capitalize text-dark/75 desktop:text-center desktop:text-medium tablet:!text-small'>Years of Experience</h2>
+                    </div>
+                    <div className='flex flex-col items-end justify-center desktop:items-center'>
+                                <span className='inline-block text-7xl font-bold desktop:text-5xl tablet:!text-3xl'>
+                                    ~<AnimatedNumbers value={250} />K
+                                </span>
+                        <h2 className='text-xl font-medium capitalize text-dark/75 text-right desktop:text-center desktop:text-medium tablet:!text-small'>Monthly Active Users for ITVX News Streams</h2>
+                    </div>
+                </div>
                 <Recommendations />
                 <Experience />
                 <div className='bg-lightGrey w-full'>
