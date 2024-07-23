@@ -2,7 +2,7 @@
   {
     "title": "ITVX Short Form",
     "primaryTechsUsed": ["JavaScript", "TypeScript", "Next", "Jest", "Figma", "REST", "GraphQL"],
-    "mainImage": "/images/projects/itv/shortform2.png",
+    "mainImage": "/images/projects/itv/main3.png",
     "tagLine": "The launch of ITVX also brought with it the launch of news/sport content on the app. Of which I have been a substantial part of since launching.",
     "uiLink": "https://www.itv.com/watch/news/the-latest-itv-news-headlines-as-president-joe-biden-pulls-out-of-election-race/b0qf9t1",
     "responsive": "Yes"
@@ -10,7 +10,7 @@
   {
     "title": "ITVX Regional News",
     "primaryTechsUsed": ["JavaScript", "TypeScript","Next","Jest","Figma","Axios","GraphQL"],
-    "mainImage": "/images/projects/itv/regional2.png",
+    "mainImage": "/images/projects/itv/main4.png",
     "tagLine": "A recent feature in which we wanted to allow our users to be able to watch news content tied to a specific region.",
     "uiLink": "https://www.itv.com/watch/categories/news",
     "responsive": "Yes"
