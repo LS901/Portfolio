@@ -13,7 +13,7 @@ const MotionLink = motion(Link);
 const FeaturedProject = ({ title, summary, image, skills, index, uiLink, gitLink, responsive, isPersonal = false }) => {
     return(
         <article
-        className = {`w-full flex flex-col laptop:items-center ${index % 2 === 0 ? 'items-start' : 'items-end'} flex bg-light/80 shadow-2xl p-12 tablet:p-10 pt-16`}>
+        className = {`w-full flex flex-col laptop:items-center ${index % 2 === 0 ? 'items-start' : 'items-end'} flex bg-light/90 shadow-2xl p-12 tablet:p-10 pt-16`}>
             <motion.div
                 variants={variant}
                 initial='hidden'
