@@ -16,8 +16,8 @@ return {
 const Recommendations = () => {
     return (
         <div className='bg-lightGrey'>
-            <AnimatedText text='Testimonials' className='font-rubik font-bold laptop:!text-2xl !text-3xl px-20 w-full text-start mb-4' />
-            <div className= 'w-full h-auto relative grid-cols-3 grid laptop:px-16 px-20 desktop:grid-cols-1 font-montLight'>
+            <AnimatedText text='Testimonials' className='font-rubik font-bold laptop:!text-2xl !text-3xl px-16 w-full text-start mb-4' />
+            <div className= 'w-full h-auto relative grid-cols-3 grid px-10 desktop:grid-cols-1 font-montLight'>
                 <motion.div className='border border-dark/50 p-8 mr-4 rounded-lg shadow-lg desktop:m-4'
                             variants={variant(0)}
                             initial='hidden'

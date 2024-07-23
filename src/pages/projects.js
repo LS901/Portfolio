@@ -63,9 +63,6 @@ const variant = {
 };
 const Projects = () => {
     const [activeProjectPage, setActiveProjectPage] = useState('personal');
-    const itvxTechs = ['JS','TS','React','Next', 'Webpack','HTML/CSS','Node','PNPM','Jest','Cypress', 'Figma', 'REST', 'GraphQL', 'Storybook', 'LaunchDarkly'];
-    const itvNewsTechs = ['Same as above, plus...','Axios', 'Redis', 'Sass','Sitemap', 'Morgan', 'Contentful']
-
     const changeProjectType = (type) => {
         setActiveProjectPage(type);
     }
