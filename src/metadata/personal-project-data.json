@@ -2,7 +2,7 @@
   {
     "title": "Shopkeeper",
     "primaryTechsUsed": ["JavaScript", "React", "Tailwind CSS", "Framer Motion", "REST APIs", "Vitest"],
-    "mainImage": "/images/projects/shopkeeper/main.png",
+    "mainImage": "/images/projects/shopkeeper/main2.png",
     "tagLine": "A React based, client-side, single page application showcasing my abilities in pure react based applications. Built with Vite, tested with Vitest",
     "uiLink": "https://shopping-site-blue.vercel.app/",
     "gitLink": "https://github.com/LS901/Shopping-Site",
