@@ -28,11 +28,6 @@ const skillTransition = (y, delay) => {
         }
     }
 }
-
-const skillTitle = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transitions: { duration: 1 } }
-}
 const Skill = ({name, image, className, delay}) => {
     const ref = useRef(null);
     return (

@@ -19,17 +19,16 @@ const FeaturedProject = ({ title, summary, image, skills, index, uiLink, gitLink
                 initial='hidden'
                 whileInView='visible'
             >
-                <Image width={3434} height={1898} src={`${image}`} alt={title} className={`w-[1000px] transition-opacity aspect-auto shadow-2xl rounded-lg`} />
+                <Image width={0} height={0} sizes="100vw" src={`${image}`} alt={title} className={`w-[100%] h-auto transition-opacity aspect-auto shadow-2xl rounded-lg`} />
                 <div className=''>
                     <div className='row-span-1'>
                         <h2 className='font-rubik my-5 w-full text-left text-4xl font-extrabold py-2 '>{title}</h2>
                         <p className='font-rubik mb-4 font-medium text-dark'>{summary}</p>
                         <p className='font-rubik mb-4 font-medium text-dark'><em>Responsive? {responsive}</em></p>
-                        <div className='font-light text-orange'>
+                        <div className='flex flex-wrap font-light text-orange'>
                             {skills.map((e,index) => (
-                                // eslint-disable-next-line react/jsx-key
                                 <>
-                                    <span className='pr-4'>{e}</span>
+                                    <span className='pr-4' key={e.uid}>{e}</span>
                                     {skills.length - 1 !== index && (
                                         <span className='!pr-4'>|</span>
                                     )}
