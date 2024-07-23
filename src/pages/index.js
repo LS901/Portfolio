@@ -25,9 +25,9 @@ export default function Home() {
       </Head>
         <Transition></Transition>
         <main className='flex flex-col items-center text-dark w-full min-h-screen'>
-                <Banner heading="Hi, I'm Lewis" body="a passionate and driven front end engineer." className='w-screen laptop:max-h-[450px]'/>
+                <Banner heading="Hi, I'm Lewis." body="A passionate and driven front end engineer." className='w-screen laptop:max-h-[450px]'/>
                 <div className='bg-lightGrey'>
-                    <div className='py-24 px-12 flex flex-col'>
+                    <div className='py-16 px-12 flex flex-col'>
                         <p className='font-light w-2/3 laptop:w-full leading-7'>
                             Experienced Front End Engineer with a strong proficiency in modern front end technologies. Focused on JavaScript, React.js,
                             Next.js and TypeScript. Experienced with all Agile development methodologies such as Kanban, Scrum and Scrumban. Highly

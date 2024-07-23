@@ -47,7 +47,7 @@ const about = () => {
             <main className='flex w-full flex-col items-center justify-center'>
                 <Banner heading={"A little more about me"} className='w-screen laptop:max-h-[300px] !h-[500px]'/>
                     <div className='grid w-full grid-cols-9 gap-16 desktop:grid-cols-1 desktop:items-center bg-lightGrey'>
-                        <div className='laptop:py-10 p-20 px-16 col-span-6 flex flex-col items-start desktop:order-2 desktop:col-span-1'>
+                        <div className='laptop:py-4 p-20 px-16 col-span-6 flex flex-col items-start desktop:order-2 desktop:col-span-1'>
                             <h1 className='font-rubik py-10 font-extrabold tablet:text-2xl text-3xl'>Hi, I&apos;m Lewis, a Frontend Engineer for ITV: One of the UK&apos;s biggest broadcasters</h1>
                             <h2 className='font-rubik pb-10 text-2xl font-bold text-darkGrey'>Biography</h2>
                             <p className='font-montLight'>Specifically working within the News team. With a passion for creating highly responsive, functional,
