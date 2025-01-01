@@ -36,7 +36,7 @@ export default function Home() {
                         Highly driven, motivated and quick to pick up new technologies, 
                         with a proven track record developing visible front-end services to strict deadlines.
                         </p>
-                        <MotionLink href="LewisSaundersItvResume.pdf" target={"_blank"}
+                        <MotionLink href="CV.pdf" target={"_blank"}
                                     className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-8 flex items-center justify-center'
                                     whileHover={{scale: 1.1}}
                                     download={true}
@@ -49,7 +49,7 @@ export default function Home() {
                             whileInView='visible'
                             className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:mr-0 mr-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
                             <h1 className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'>Projects</h1>
-                            <p className='pt-3 font-thin text-lightGrey text-xl text-left laptop:!text-2xl'>A collection of my personal projects and work I have done whilst at ITV</p>
+                            <p className='pt-3 font-thin text-lightGrey text-xl text-left laptop:!text-2xl'>A collection of my personal and professional projects</p>
                             <MotionLink href="/projects"
                                         className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-6 flex items-center justify-center'
                                         whileHover={{scale: 1.1}}

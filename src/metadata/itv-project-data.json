@@ -1,5 +1,13 @@
 [
   {
+    "title": "Health Data Gateway",
+    "primaryTechsUsed": ["JavaScript", "TypeScript", "Next", "MaterialUI", "Jest", "PHP", "SQL"],
+    "mainImage": "/images/projects/hdr.png",
+    "tagLine": "The Gateway streamlines the end-to-end user journey to search, discover and request access to the wealth of health and associated Datasets, Analysis Scripts & Software, Publications and Research Projects from across the UK and beyond.",
+    "uiLink": "https://healthdatagateway.org/en",
+    "responsive": "Yes"
+  },
+  {
     "title": "ITVX Short Form",
     "primaryTechsUsed": ["JavaScript", "TypeScript", "Next", "Jest", "Figma", "REST", "GraphQL"],
     "mainImage": "/images/projects/itv/main3.png",
@@ -13,14 +21,6 @@
     "mainImage": "/images/projects/itv/main4.png",
     "tagLine": "A recent feature in which we wanted to allow our users to be able to watch news content tied to a specific region.",
     "uiLink": "https://www.itv.com/watch/categories/news",
-    "responsive": "Yes"
-  },
-  {
-    "title": "ITVX News & Future Events",
-    "primaryTechsUsed": ["TypeScript","Next","Jest","Figma","Axios","Redis", "GraphQL", "Contentful"],
-    "mainImage": "/images/projects/UKElectionStats.png",
-    "tagLine": "A project in which we are set up a temporary seat counter for the UK election in July. And a new portrait tile slider on ITVX browser/CTV for event based news (e.g when the USA election will take place).",
-    "uiLink": "https://www.itvx.com/news",
     "responsive": "Yes"
   }
 ]

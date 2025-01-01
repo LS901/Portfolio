@@ -48,18 +48,17 @@ const about = () => {
                 <Banner heading={"A little more about me"} className='w-screen laptop:max-h-[300px] !h-[500px]'/>
                     <div className='grid w-full grid-cols-9 gap-16 desktop:grid-cols-1 desktop:items-center bg-lightGrey'>
                         <div className='laptop:py-4 p-20 px-16 col-span-6 flex flex-col items-start desktop:order-2 desktop:col-span-1'>
-                            <h1 className='font-rubik py-10 font-extrabold tablet:text-2xl text-3xl'>Hi, I&apos;m Lewis, a Frontend Engineer for ITV: One of the UK&apos;s biggest broadcasters</h1>
-                            <h2 className='font-rubik pb-10 text-2xl font-bold text-darkGrey'>Biography</h2>
-                            <p className='font-montLight'>Specifically working within the News team. With a passion for creating highly responsive, functional,
-                                and user-centered digital experiences, I&apos;m looking to work for <span className='font-extra-bold'>you</span> and be your next front end engineer. With 4.5 years of experience in the technology field,
+                            <div className='flex'><h1 className='font-rubik py-5 font-extrabold tablet:text-2xl text-3xl mr-3'>Hi, I&apos;m Lewis</h1><img src="waving-hand-sign.svg" width="40px"></img></div>
+                            <p className='font-montLight'>With a passion for creating highly responsive, functional,
+                                and user-centered digital experiences, I&apos;m looking to work for <span className='font-extra-bold'>you</span> and be your next front end engineer. With 5+ years of experience in the technology field,
                                 I am confident in my career path as an engineer, and I am also always looking for ways to develop, learn and grow.</p>
                             <p className='font-montLight my-4'>I believe that user experience, performance and aesthetic all lie at the core of front end engineering. I ensure that I keep a user-focused approach in my work
                             at all times. I also make sure to always follow strict coding conventions which lead to highly optimal & readable codebasess. </p>
-                            <p className='font-montLight'>Whether I am working on a the ITV news website, ITVX or subsequent mobile applications, I bring my dedication to front end engineering and user-centered thinking to
+                            <p className='font-montLight'>Whether I am working on building reusable components, creating API routes, or bringing designs to life; I bring my dedication to front end engineering and user-centered thinking to
                                 every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.</p>
                         </div>
-                        <div className='mx-14 col-span-3 self-center flex h-max p-2 shadow-2xl desktop:hidden'>
-                            <Image src={profilePicture} alt='Lewis Saunders' className='w-full h-auto desktop:order-1 '></Image>
+                        <div className='mx-14 col-span-3 self-end flex h-max p-2 shadow-2xl desktop:hidden'>
+                            <Image src={profilePicture} alt='Lewis Saunders' className='self-bottom w-full h-auto desktop:order-1 '></Image>
                         </div>
                     </div>
                 <div className='w-full p-20 flex items-center justify-between bg-lightGrey'>
@@ -71,7 +70,7 @@ const about = () => {
                     </div>
                     <div className='flex flex-col items-end justify-center desktop:items-center desktop:self-start'>
                                 <span className='inline-block text-7xl font-bold desktop:text-5xl tablet:!text-3xl'>
-                                    <AnimatedNumbers value={4} />+
+                                    <AnimatedNumbers value={5} />+
                                 </span>
                         <h2 className='text-xl font-medium capitalize text-dark/75 desktop:text-center desktop:text-medium tablet:!text-small'>Years of Experience</h2>
                     </div>

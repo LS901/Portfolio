@@ -61,7 +61,7 @@ const variant = {
     }
 };
 const Projects = () => {
-    const [activeProjectPage, setActiveProjectPage] = useState('personal');
+    const [activeProjectPage, setActiveProjectPage] = useState('professional');
     const changeProjectType = (type) => {
         setActiveProjectPage(type);
     }
@@ -77,7 +77,7 @@ const Projects = () => {
                     <Banner heading={"Projects"} className='w-screen laptop:max-h-[300px] !h-[500px]'/>
                     <ProjectType projectPage={activeProjectPage} changeProjectType={changeProjectType}/>
                     <div className='flex flex-col w-full'>
-                        {activeProjectPage === 'ITV' ? (
+                        {activeProjectPage === 'professional' ? (
                             itvData.map((p,index) => (
                                 <motion.div className='col-span-4'
                                             key={p.uid}

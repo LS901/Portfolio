@@ -56,11 +56,23 @@ const Experience = () => {
         <AnimatedText text='Experience' className='font-rubik font-bold !text-3xl py-20 w-full text-center mb-4 desktop:mb-0 laptop:!text-2xl' />
         <div ref={ref} className='w-[75%] laptop:w-full mx-auto relative'>
             <ul className= 'w-full flex flex-col items-start justify-between ml-4 tablet:ml-0'>
-                <Details
+                 <Details
                     delay={0}
                     position="Frontend Engineer"
+                    company="Health Data Research UK"
+                    time="2024-Present"
+                    location="London, UK"
+                    companyLink="https://www.hdruk.ac.uk/"
+                    work="Development and maintenance of dynamic web applications using Next.js, Typescript and
+                    Material UI, ensuring high performance, SEO optimisation, meeting accessibility standards and
+                    matching UI/UX designs. Creation of API routes on the backend, whilst implementing functionality 
+                    for database manipulation."
+                />
+                <Details
+                    delay={0.5}
+                    position="Frontend Engineer"
                     company="ITV"
-                    time="2022-Present"
+                    time="2022-2024"
                     location="London, UK"
                     companyLink="www.itvx.com"
                     work="Taking part in the development of responsive and user-friendly web applications, ensuring a
@@ -69,7 +81,7 @@ const Experience = () => {
                          wireframes into quality code."
                 />
                 <Details
-                    delay={0.5}
+                    delay={1}
                     position="Software Development Engineer in Test"
                     company="ITV"
                     time="2020-2022"
@@ -80,7 +92,7 @@ const Experience = () => {
                           applications, ensuring comprehensive coverage of functional and non-functional requirements. Ruby was the main tech used in this role."
                 />
                 <Details
-                    delay={1}
+                    delay={1.5}
                     position="Technology Graduate"
                     company="ITV"
                     time="2019-2020"
