@@ -29,12 +29,14 @@ export default function Home() {
                 <div className='bg-lightGrey'>
                     <div className='py-16 px-12 flex flex-col'>
                         <p className='font-light w-2/3 laptop:w-full leading-7'>
-                            Experienced Front End Engineer with a strong proficiency in modern front end technologies. Focused on JavaScript, React.js,
-                            Next.js and TypeScript. Experienced with all Agile development methodologies such as Kanban, Scrum and Scrumban. Highly
-                            driven, motivated and quick to pick up new technologies, with a proven track record developing visible front-end services to strict
-                            deadlines.
+                        Experienced Front End Engineer with a strong proficiency in modern
+                        front end technologies and experience with back end technologies. 
+                        Specialising in React, Next.js and TypeScript. Experienced with all
+                        Agile development methodologies such as Kanban, Scrum and Scrumban. 
+                        Highly driven, motivated and quick to pick up new technologies, 
+                        with a proven track record developing visible front-end services to strict deadlines.
                         </p>
-                        <MotionLink href="CV.pdf" target={"_blank"}
+                        <MotionLink href="LewisSaundersItvResume.pdf" target={"_blank"}
                                     className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-8 flex items-center justify-center'
                                     whileHover={{scale: 1.1}}
                                     download={true}
