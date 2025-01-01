@@ -108,7 +108,7 @@ const Experience = () => {
                       whileInView='visible'
                       viewport={{ once: true}}
                       initial='hidden'>For further details of my past experience, take a look at my&nbsp;
-                <Link href="/CV.pdf" target={"_blank"} download={true}><strong className='hover:underline cursor-pointer text-orange' href="/CV.pdf">CV</strong></Link>
+                <Link href="/LewisSaundersResume.pdf" target={"_blank"} download={true}><strong className='hover:underline cursor-pointer text-orange' href="/LewisSaundersResume.pdf">CV</strong></Link>
             </motion.p>
         </div>
     </div>
