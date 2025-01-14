@@ -1,0 +1,84 @@
+.custom-carousel .carousel .slide {
+    background: transparent;
+    padding: 10px;
+}
+
+.custom-carousel .carousel .slide.selected {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.custom-carousel .carousel .slide:not(.selected) {
+    opacity: 0.5;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
+
+.custom-carousel .carousel.carousel-slider .control-arrow {
+    background: rgba(0, 0, 0, 0.2);
+    height: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-carousel .carousel .control-next.control-arrow:before {
+    border-left: 8px solid #fff;
+}
+
+.custom-carousel .carousel .control-prev.control-arrow:before {
+    border-right: 8px solid #fff;
+}
+
+.custom-carousel .carousel .control-arrow:before, 
+.custom-carousel .carousel.carousel-slider .control-arrow:before {
+    margin: 0 5px;
+    display: inline-block;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    content: '';
+}
+
+.custom-carousel .carousel .control-dots {
+    bottom: -5px;
+}
+
+.custom-carousel .carousel .control-dots .dot {
+    box-shadow: none;
+    background: #000;
+    outline: 0;
+}
+
+.custom-carousel .carousel.carousel-slider .control-arrow:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-carousel .carousel .slide {
+        padding: 5px;
+    }
+
+    .custom-carousel .carousel .slide.selected {
+        transform: scale(1);
+    }
+
+    .custom-carousel .carousel .slide:not(.selected) {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .custom-carousel .carousel.carousel-slider .control-arrow {
+        height: 40px;
+    }
+
+    .custom-carousel .carousel .control-dots {
+        bottom: 0;
+    }
+}
+
+/* Ensure content doesn't overflow */
+.custom-carousel .carousel .slide > div {
+    max-width: 100%;
+    overflow: hidden;
+}

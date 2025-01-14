@@ -1,91 +1,95 @@
-import React from 'react';
-import AnimatedText from "@/components/AnimatedText";
+import React, { useState, useEffect } from 'react';
 import { User } from "@nextui-org/user";
+import AnimatedText from "@/components/AnimatedText";
 import { motion } from 'framer-motion';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const variant = (delay) => {
-return {
-    hidden: { opacity: 0, y: -50},
-    visible: {
-        opacity: 1,
-        y:0,
-        transition: { delay }
-        }
-    }
-}
 const Recommendations = () => {
-    return (
-        <div className='bg-lightGrey'>
-            <AnimatedText text='Testimonials' className='font-rubik font-bold laptop:!text-2xl !text-3xl px-16 w-full text-start mb-4' />
-            <div className= 'w-full h-auto relative grid-cols-3 grid px-10 desktop:grid-cols-1 font-montLight'>
-                <motion.div className='border border-dark/50 p-8 mr-4 rounded-lg shadow-lg desktop:m-4'
-                            variants={variant(0)}
-                            initial='hidden'
-                            whileInView='visible'
-                            viewport= {{ once: true }}>
-                    <User
-                        name="Julio Alves"
-                        description="Lead Front End Engineer - ITV"
-                        avatarProps={{
-                          name: 'JA',
-                          className: 'bg-orange/80'
-                        }}
-                    />
-                    <p className='py-4'>
-                        I had the pleasure of working closely with Lewis for 2 years and have witnessed his remarkable growth as a frontend developer.
-                        Lewis has proven to be a reliable and resourceful member of the team, continuously pushing himself to improve and help the team reach its goals.
-                        <br /> <br />
-                        Beyond his technical skills, Lewis excels in communication and collaboration, always maintaining a positive attitude and a proactive approach.
-                        I highly recommend Lewis for any frontend development positions due to his technical skills, composure, and growth potential.
-                    </p>
-                </motion.div>
-                <motion.div className='border border-dark/50 p-8 mr-4 rounded-lg shadow-lg desktop:m-4'
-                            variants={variant(0.3)}
-                            initial='hidden'
-                            whileInView='visible'
-                            viewport= {{ once: true }}>
-                    <User
-                        name="Emily Giblett"
-                        description="Core Front End Engineer - ITV"
-                        avatarProps={{
-                            name: 'EG',
-                            className: 'bg-orange/80'
-                        }}
-                    />
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const [useCenterMode, setUseCenterMode] = useState(true);
+    const testimonials = [
+        {
+            name: "Julio Alves",
+            description: "Lead Front End Engineer - ITV",
+            content: `I had the pleasure of working closely with Lewis for 2 years and have witnessed his remarkable growth as a frontend developer.
+                Lewis has proven to be a reliable and resourceful member of the team, continuously pushing himself to improve and help the team reach its goals.
+                Beyond his technical skills, Lewis excels in communication and collaboration, always maintaining a positive attitude and a proactive approach.
+                I highly recommend Lewis for any frontend development positions due to his technical skills, composure, and growth potential.`,
+            className: 'bg-orange/80'
+          },
+          {
+            name: "Emily Giblett",
+            description: "Core Front End Engineer - ITV",
+            content: `Lewis is an absolute asset to our team, and it's a joy to work alongside him. He is incredibly diligent,
+                patient and has great attention to detail, making him an excellent pairing companion.
+                I've learnt a lot from our time working together, and I have no doubt that Lewis will make a similarly
+                impactful contribution to any other engineering roles that he takes on in the future.`,
+            className: 'bg-orange/80'
+          },
+          {
+            name: "Iain Smith",
+            description: "Head Of Product - News - ITV",
+            content: `Lewis has played a vital role in building ITV News' innovative digital services,
+                including our market-leading news proposition on our ITVX streaming platform.
+                He's a very skilled front-end developer who delivers high quality solutions that are used by millions of people.
+                His work is of an excellent standard, and he has the ability to turn his hand to any challenge presented to him,
+                even with tight deadlines. Lewis combines these skills with a passion for detail, and contributes great ideas
+                for product development. Alongside this he's thoughtful and a pleasure to work with in the team -
+                he works well with all of his colleagues, he's fun and supportive of others.`,
+            className: 'bg-orange/80'
+          },
+          {
+            name: "Peter Hammans",
+            description: "Senior UI Engineer - HDRUK",
+            content: `Lewis worked in our team as a user interface developer at health data research uk with ReactJS and NextJS. He worked out our authentication / registration with in keycloak which was a new technology, as well as many other components both contributing to our component library and more complex features within the site. The whole project was on a very tight schedule so it was all hands to the pumps, but he turned round alot of quality work in a short space of time and also stayed in regular contact whether relating to work or more generally socially, which as a remote team are essential qualities to have. It's a real shame for him to be leaving us!`,
+            className: 'bg-blue-300'
+          }
+    ];
 
-                    <p className='py-4'>
-                        Lewis is an absolute asset to our team, and it&apos;s a joy to work alongside him. He is incredibly diligent,
-                        patient and has great attention to detail, making him an excellent pairing companion.
-                        I&apos;ve learnt a lot from our time working together, and I have no doubt that Lewis will make a similarly
-                        impactful contribution to any other engineering roles that he takes on in the future.
-                    </p>
-                </motion.div>
-                <motion.div className='border border-dark/50 p-8 rounded-lg shadow-lg desktop:m-4'
-                            variants={variant(0.6)}
-                            initial='hidden'
-                            whileInView='visible'
-                            viewport= {{ once: true }}>
-                    <User
-                        name="Iain Smith"
-                        description="Head Of Product - News - ITV"
-                        avatarProps={{
-                            name: 'IS',
-                            className: 'bg-orange/80'
-                        }}
-                    />
-                    <p className='py-4'>
-                        Lewis has played a vital role in building ITV News&apos; innovative digital services,
-                        including our market-leading news proposition on our ITVX streaming platform.
-                        He&apos;s a very skilled front-end developer who delivers high quality solutions that are used by millions of people.
-                        His work is of an excellent standard, and he has the ability to turn his hand to any challenge presented to him,
-                        even with tight deadlines. Lewis combines these skills with a passion for detail, and contributes great ideas
-                        for product development. Alongside this he&apos;s thoughtful and a pleasure to work with in the team -
-                        he works well with all of his colleagues, he&apos;s fun and supportive of others.
-                    </p>
-                </motion.div>
-            </div>
+    return (
+        <div className='bg-lightGrey p-8 w-screen'>
+            <AnimatedText 
+                text='Testimonials' 
+                className='font-rubik font-bold laptop:!text-2xl !text-3xl w-full text-center mb-8' 
+            />
+            <Carousel 
+                    showArrows={true}
+                    infiniteLoop={true}
+                    showThumbs={false}
+                    showStatus={false}
+                    autoPlay={true}
+                    interval={6000}
+                    centerMode={true}
+                    emulateTouch={true}
+                    swipeable={true}
+                    className="custom-carousel"
+                    selectedItem={currentSlide}
+                    onChange={setCurrentSlide}
+            >
+                {testimonials.map((testimonial, index) => (
+                    <div key={index} className='px-4 pb-10'>
+                        <motion.div 
+                            className='p-8 rounded-lg shadow-lg bg-white'
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                        >
+                            <User
+                                name={testimonial.name}
+                                description={testimonial.description}
+                                avatarProps={{
+                                    name: testimonial.name.split(' ').map(n => n[0]).join(''),
+                                    className: testimonial.className
+                                }}
+                            />
+                            <p className='py-4 font-montLight'>{testimonial.content}</p>
+                        </motion.div>
+                    </div>
+                ))}
+            </Carousel>
         </div>
     )
 }
 
-export default Recommendations
+export default Recommendations;
