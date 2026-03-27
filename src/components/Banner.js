@@ -9,7 +9,7 @@ const Banner = ({heading, body, className}) => {
                         initial={{opacity:0}}
                         animate={{opacity:1, transition: { duration: 1 }}}>
                 <AnimatedText text={heading} className='font-extrabold text-lightGrey !text-7xl tablet:!text-5xl !text-left ' delay={0.5}/>
-                <p className='self-start font-extrabold text-lightGrey text-7xl tablet:!text-5xl'>{body}</p>
+                {body && <p className='self-start font-extrabold text-lightGrey text-7xl tablet:!text-5xl'>{body}</p>}
             </motion.div>
         </div>
     );

@@ -24,15 +24,15 @@ const FeaturedProject = ({ title, summary, image, skills, index, uiLink, gitLink
                     <div className='row-span-1'>
                         <h2 className='font-rubik my-5 w-full text-left text-4xl font-extrabold py-2 '>{title}</h2>
                         <p className='font-rubik mb-4 font-medium text-dark'>{summary}</p>
-                        <p className='font-rubik mb-4 font-medium text-dark'><em>Responsive? {responsive}</em></p>
+                        {responsive && <p className='font-rubik mb-4 font-medium text-dark'><em>Responsive? {responsive}</em></p>}
                         <div className='flex flex-wrap font-light text-orange'>
                             {skills.map((e,index) => (
-                                <>
-                                    <span className='pr-4' key={e.uid}>{e}</span>
+                                <React.Fragment key={`${title}-${e}`}>
+                                    <span className='pr-4'>{e}</span>
                                     {skills.length - 1 !== index && (
                                         <span className='!pr-4'>|</span>
                                     )}
-                                </>
+                                </React.Fragment>
                             ))}
                         </div>
                         <div className='flex'>
@@ -80,7 +80,7 @@ const Projects = () => {
                         {activeProjectPage === 'professional' ? (
                             itvData.map((p,index) => (
                                 <motion.div className='col-span-4'
-                                            key={p.uid}
+                                            key={p.title}
                                             >
                                     <FeaturedProject
                                         title={p.title}
@@ -89,13 +89,12 @@ const Projects = () => {
                                         uiLink={p.uiLink}
                                         skills={p.primaryTechsUsed}
                                         index={index}
-                                        responsive={p.responsive}
                                     />
                                 </motion.div>
                             ))) : (
                             personalData.map((p,index) => (
                                 <motion.div className='col-span-4'
-                                            key={p.uid}
+                                            key={p.title}
                                             >
                                     <FeaturedProject
                                         title={p.title}

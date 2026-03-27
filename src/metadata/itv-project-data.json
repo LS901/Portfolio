@@ -1,26 +1,30 @@
 [
+   {
+    "title": "Hastings Direct",
+    "primaryTechsUsed": ["JavaScript", "TypeScript","SQL", "Jest" ,"Figma"],
+    "mainImage": "/images/projects/hastings/quote.png",
+    "tagLine": "At Hastings Direct, I helped deliver the digital renewals journey and the new quote and buy experience, improving key customer journeys across the insurance platform.",
+    "uiLink": "https://www.hastingsdirect.com/"
+  },
   {
     "title": "Health Data Gateway",
     "primaryTechsUsed": ["JavaScript", "TypeScript", "Next", "MaterialUI", "Jest", "PHP", "SQL"],
     "mainImage": "/images/projects/hdr.png",
-    "tagLine": "The Gateway streamlines the end-to-end user journey to search, discover and request access to the wealth of health and associated Datasets, Analysis Scripts & Software, Publications and Research Projects from across the UK and beyond.",
-    "uiLink": "https://healthdatagateway.org/en",
-    "responsive": "Yes"
+    "tagLine": "Health Data Gateway streamlines how researchers search, discover, and request access to datasets, analysis scripts, publications, and research projects from across the UK and beyond.",
+    "uiLink": "https://healthdatagateway.org/en"
   },
   {
     "title": "ITVX Short Form",
     "primaryTechsUsed": ["JavaScript", "TypeScript", "Next", "Jest", "Figma", "REST", "GraphQL"],
     "mainImage": "/images/projects/itv/main3.png",
-    "tagLine": "The launch of ITVX also brought with it the launch of news/sport content on the app. Of which I have been a substantial part of since launching.",
-    "uiLink": "https://www.itv.com/watch/news/the-latest-itv-news-headlines-as-president-joe-biden-pulls-out-of-election-race/b0qf9t1",
-    "responsive": "Yes"
+    "tagLine": "I contributed to the launch and ongoing development of short-form news and sport content on ITVX, helping expand the platform's editorial video experience.",
+    "uiLink": "https://www.itv.com/watch/news/the-latest-itv-news-headlines-as-president-joe-biden-pulls-out-of-election-race/b0qf9t1"
   },
   {
     "title": "ITVX Regional News",
     "primaryTechsUsed": ["JavaScript", "TypeScript","Next","Jest","Figma","Axios","GraphQL"],
     "mainImage": "/images/projects/itv/main4.png",
-    "tagLine": "A recent feature in which we wanted to allow our users to be able to watch news content tied to a specific region.",
-    "uiLink": "https://www.itv.com/watch/categories/news",
-    "responsive": "Yes"
+    "tagLine": "A regionalised news experience that allows users to watch content tailored to their location, making ITV News more relevant and personalised.",
+    "uiLink": "https://www.itv.com/watch/categories/news"
   }
 ]

@@ -3,7 +3,7 @@
     "title": "Shopkeeper",
     "primaryTechsUsed": ["JavaScript", "React", "Tailwind CSS", "Framer Motion", "REST APIs", "Vitest"],
     "mainImage": "/images/projects/shopkeeper/main2.png",
-    "tagLine": "A React based, client-side, single page application showcasing my abilities in pure react based applications. Built with Vite, tested with Vitest",
+    "tagLine": "A React single-page application built with Vite and tested with Vitest, created to showcase polished client-side architecture, API integration, and UI development.",
     "uiLink": "https://shopping-site-blue.vercel.app/",
     "gitLink": "https://github.com/LS901/Shopping-Site",
     "responsive": "Yes"
@@ -12,7 +12,7 @@
     "title": "To-do List/Habit Tracker",
     "primaryTechsUsed": ["JavaScript", "React","Tailwind CSS","Framer Motion","RadixUI" ,"Local Storage"],
     "mainImage": "/images/projects/habittracker/main.png",
-    "tagLine": "A React application, primarily showcasing handling complex logic and data manipulation in local storage.",
+    "tagLine": "A React application focused on complex state management, habit tracking flows, and structured local storage persistence.",
     "uiLink": "https://to-do-habit-tracker.vercel.app/",
     "gitLink": "https://github.com/LS901/To-do-Habit-Tracker",
     "responsive": "No"
@@ -21,7 +21,7 @@
     "title": "Static Dashboard",
     "primaryTechsUsed": ["HTML","CSS","Tailwind CSS"],
     "mainImage": "/images/projects/dashboard/main.png",
-    "tagLine": "A basic, static dashboard showcasing HTML/CSS structural & stylistic skills, specifically utilizing flex and grid",
+    "tagLine": "A static dashboard concept built to showcase layout, spacing, and visual structure using HTML, CSS, Flexbox, and Grid.",
     "uiLink": "https://dashboard-eight-rho-31.vercel.app/",
     "gitLink": "https://github.com/LS901/Dashboard",
     "responsive": "No"
