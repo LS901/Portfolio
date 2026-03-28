@@ -24,7 +24,7 @@ const Details = ({position, company, companyLink, time, location, work, delay}) 
     const ref = useRef(null);
     return (
     <motion.li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] tablet:w-full mx-auto flex flex-col items-center justify-between'
-               variants={experienceTransition(0)}
+               variants={experienceTransition(delay)}
                whileInView='visible'
                viewport={{ once: true}}
                initial='hidden'>
@@ -58,9 +58,18 @@ const Experience = () => {
             <ul className= 'w-full flex flex-col items-start justify-between ml-4 tablet:ml-0'>
                  <Details
                     delay={0}
+                    position="Digital Developer"
+                    company="Hastings Direct"
+                    time="April 2025 - Current"
+                    location="Bexhill, UK"
+                    companyLink="https://www.hastingsdirect.com/"
+                    work="Delivered customer-facing journeys across the Hastings Direct platform, with a focus on the digital renewals journey and the new quote and buy experience. Worked on responsive front-end solutions that supported reliable user flows and improved key insurance journeys."
+                />
+                <Details
+                    delay={0.5}
                     position="Frontend Engineer"
                     company="Health Data Research UK"
-                    time="2024-Present"
+                    time="2024-2025"
                     location="London, UK"
                     companyLink="https://www.hdruk.ac.uk/"
                     work="Development and maintenance of dynamic web applications using Next.js, Typescript and
@@ -69,7 +78,7 @@ const Experience = () => {
                     for database manipulation."
                 />
                 <Details
-                    delay={0.5}
+                    delay={1}
                     position="Frontend Engineer"
                     company="ITV"
                     time="2022-2024"
@@ -81,7 +90,7 @@ const Experience = () => {
                          wireframes into quality code."
                 />
                 <Details
-                    delay={1}
+                    delay={1.5}
                     position="Software Development Engineer in Test"
                     company="ITV"
                     time="2020-2022"
@@ -92,7 +101,7 @@ const Experience = () => {
                           applications, ensuring comprehensive coverage of functional and non-functional requirements. Ruby was the main tech used in this role."
                 />
                 <Details
-                    delay={1.5}
+                    delay={2}
                     position="Technology Graduate"
                     company="ITV"
                     time="2019-2020"
@@ -108,7 +117,7 @@ const Experience = () => {
                       whileInView='visible'
                       viewport={{ once: true}}
                       initial='hidden'>For further details of my past experience, take a look at my&nbsp;
-                <Link href="/LewisSaundersResume.pdf" target={"_blank"} download={true}><strong className='hover:underline cursor-pointer text-orange' href="/LewisSaundersResume.pdf">CV</strong></Link>
+                <Link href="/CV.pdf" target={"_blank"} download={true}><strong className='hover:underline cursor-pointer text-orange' href="/LewisSaundersResume.pdf">CV</strong></Link>
             </motion.p>
         </div>
     </div>
