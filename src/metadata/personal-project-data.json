@@ -4,7 +4,7 @@
     "primaryTechsUsed": ["TypeScript", "React", "Node.js", "Express", "Tailwind CSS", "DaisyUI", "Vite"],
     "mainImage": "/images/projects/parkpulse/main.png",
     "tagLine": "A crowd prediction and visit planning tool for UK theme parks. Combines weather, school holidays, events, and ride data to forecast busyness and generate personalised itineraries for Alton Towers, Thorpe Park, Chessington, and LEGOLAND Windsor.",
-    "uiLink": "https://park-pulse.vercel.app",
+    "uiLink": "https://park-pulse-steel.vercel.app",
     "gitLink": "https://github.com/LS901/ParkPulse",
     "responsive": "Yes"
   },
