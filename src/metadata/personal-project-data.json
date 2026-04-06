@@ -1,27 +1,36 @@
 [
   {
+    "title": "ParkPulse",
+    "primaryTechsUsed": ["TypeScript", "React", "Node.js", "Express", "Tailwind CSS", "DaisyUI", "Vite"],
+    "mainImage": "/images/projects/parkpulse/main.png",
+    "tagLine": "A crowd prediction and visit planning tool for UK theme parks. Combines weather, school holidays, events, and ride data to forecast busyness and generate personalised itineraries for Alton Towers, Thorpe Park, Chessington, and LEGOLAND Windsor.",
+    "uiLink": "https://park-pulse.vercel.app",
+    "gitLink": "https://github.com/LS901/ParkPulse",
+    "responsive": "Yes"
+  },
+  {
     "title": "Shopkeeper",
     "primaryTechsUsed": ["JavaScript", "React", "Tailwind CSS", "Framer Motion", "REST APIs", "Vitest"],
     "mainImage": "/images/projects/shopkeeper/main2.png",
-    "tagLine": "A React single-page application built with Vite and tested with Vitest, created to showcase polished client-side architecture, API integration, and UI development.",
+    "tagLine": "A polished React single-page application built with Vite and tested with Vitest, showcasing client-side architecture, API integration, and responsive UI design.",
     "uiLink": "https://shopping-site-blue.vercel.app/",
     "gitLink": "https://github.com/LS901/Shopping-Site",
     "responsive": "Yes"
   },
   {
     "title": "To-do List/Habit Tracker",
-    "primaryTechsUsed": ["JavaScript", "React","Tailwind CSS","Framer Motion","RadixUI" ,"Local Storage"],
+    "primaryTechsUsed": ["JavaScript", "React", "Tailwind CSS", "Framer Motion", "RadixUI", "Local Storage"],
     "mainImage": "/images/projects/habittracker/main.png",
-    "tagLine": "A React application focused on complex state management, habit tracking flows, and structured local storage persistence.",
+    "tagLine": "A React application for managing tasks and building habits, featuring complex state management and structured local storage persistence.",
     "uiLink": "https://to-do-habit-tracker.vercel.app/",
     "gitLink": "https://github.com/LS901/To-do-Habit-Tracker",
     "responsive": "No"
   },
   {
     "title": "Static Dashboard",
-    "primaryTechsUsed": ["HTML","CSS","Tailwind CSS"],
+    "primaryTechsUsed": ["HTML", "CSS", "Tailwind CSS"],
     "mainImage": "/images/projects/dashboard/main.png",
-    "tagLine": "A static dashboard concept built to showcase layout, spacing, and visual structure using HTML, CSS, Flexbox, and Grid.",
+    "tagLine": "A static dashboard layout built to demonstrate clean visual structure, spacing, and responsive grid techniques using HTML, CSS, and Tailwind.",
     "uiLink": "https://dashboard-eight-rho-31.vercel.app/",
     "gitLink": "https://github.com/LS901/Dashboard",
     "responsive": "No"
