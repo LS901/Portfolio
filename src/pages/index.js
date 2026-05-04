@@ -38,7 +38,7 @@ export default function Home() {
                         <p className='font-light w-2/3 laptop:w-full leading-7'>
                         I&apos;m now starting to take on selected freelance projects, contract front-end support, and ongoing retainer work for teams that need senior-level implementation without the overhead of a full-time hire.
                         </p>
-                        <MotionLink href="mailto:lewissaunders100@gmail.com"
+                        <MotionLink href="mailto:lewissaunders.dev@gmail.com"
                                     className='font-extrabold rounded-3xl py-6 text-white tablet:w-full w-1/3 bg-orange h-2 my-8 flex items-center justify-center'
                                     whileHover={{scale: 1.05}}
                         >Get in Touch</MotionLink>
