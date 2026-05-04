@@ -116,8 +116,7 @@ const Experience = () => {
                       variants={experienceTransition(1)}
                       whileInView='visible'
                       viewport={{ once: true}}
-                      initial='hidden'>For further details of my past experience, take a look at my&nbsp;
-                <Link href="/CV.pdf" target={"_blank"} download={true}><strong className='hover:underline cursor-pointer text-orange' href="/LewisSaundersResume.pdf">CV</strong></Link>
+                      initial='hidden'>For further details of my past experience or to discuss working together, feel free to <Link href="mailto:lewissaunders100@gmail.com"><strong className='hover:underline cursor-pointer text-orange'>Get in Touch</strong></Link>.
             </motion.p>
         </div>
     </div>

@@ -8,6 +8,18 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Recommendations = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [useCenterMode, setUseCenterMode] = useState(true);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (typeof window !== 'undefined') {
+                setUseCenterMode(window.innerWidth > 1024); // Disable center mode for tablets and smaller
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     const testimonials = [
         {
             name: "Julio Alves",
@@ -60,7 +72,8 @@ const Recommendations = () => {
                     showStatus={false}
                     autoPlay={true}
                     interval={6000}
-                    centerMode={true}
+                    centerMode={useCenterMode}
+                    centerSlidePercentage={80}
                     emulateTouch={true}
                     swipeable={true}
                     className="custom-carousel"
@@ -68,9 +81,9 @@ const Recommendations = () => {
                     onChange={setCurrentSlide}
             >
                 {testimonials.map((testimonial, index) => (
-                    <div key={index} className='px-4 pb-10'>
+                    <div key={index} className='px-4 pb-12'>
                         <motion.div 
-                            className='p-8 rounded-lg shadow-lg bg-white'
+                            className='p-10 tablet:p-6 rounded-2xl shadow-xl bg-white text-left flex flex-col'
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -78,12 +91,13 @@ const Recommendations = () => {
                             <User
                                 name={testimonial.name}
                                 description={testimonial.description}
+                                className="justify-start pb-4"
                                 avatarProps={{
                                     name: testimonial.name.split(' ').map(n => n[0]).join(''),
                                     className: testimonial.className
                                 }}
                             />
-                            <p className='py-4 font-montLight'>{testimonial.content}</p>
+                            <p className='py-2 font-montLight leading-7'>{testimonial.content}</p>
                         </motion.div>
                     </div>
                 ))}

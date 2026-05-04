@@ -1,13 +1,11 @@
 import React, {useRef} from 'react';
-import { motion, inView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import TSImage from '../../public/images/skills/Typescript_2020.svg.png';
-import HTMLImage from '../../public/images/skills/HTML.png';
-import CSSImage from '../../public/images/skills/CSS.png';
+import TailwindImage from '../../public/images/skills/Tailwind.svg';
+import PostgresImage from '../../public/images/skills/PostgreSQL.svg';
 import NextImage from '../../public/images/skills/Next.jpg';
 import ReactImage from '../../public/images/skills/React-icon.svg.png';
-import JSImage from '../../public/images/skills/JavaScript-logo.png';
-import RubyImage from '../../public/images/skills/Ruby.png';
-import SQLImage from '../../public/images/skills/SQL5.png';
+import VercelImage from '../../public/images/skills/Vercel.svg';
 
 import Image from 'next/image'
 import AnimatedText from "@/components/AnimatedText";
@@ -56,15 +54,13 @@ const Skills = () => {
     return (
         <div className='px-10 flex flex-col font-rubik '>
             <AnimatedText text='Primary Skills' className='text-3xl pb-5 w-full text-left tablet:!text-2xl font-extrabold' />
-            <div className='h-auto relative grid-cols-4 tablet:grid-cols-2 grid bg-gray-200 py-10 rounded-3xl shadow-2xl'>
-                <Skill name='CSS' image={CSSImage} className='h-16' delay={0.2}></Skill>
-                <Skill name='HTML' image={HTMLImage} className='h-16 w-16' delay={0.2}></Skill>
-                <Skill name='JavaScript' image={JSImage} delay={0.2}></Skill>
-                <Skill name='React.JS' image={ReactImage} className='h-16 w-24' delay={0.2}></Skill>
-                <Skill name='Next.JS' image={NextImage} delay={0.4}></Skill>
-                <Skill name='TypeScript' image={TSImage}  delay={0.4}></Skill>
-                <Skill name='Ruby' image={RubyImage}  delay={0.4}></Skill>
-                <Skill name='SQL' image={SQLImage}  delay={0.4}></Skill>
+            <div className='h-auto relative grid-cols-3 tablet:grid-cols-2 grid bg-gray-200 py-10 rounded-3xl shadow-2xl'>
+                <Skill name='Next.js' image={NextImage} delay={0.2}></Skill>
+                <Skill name='React' image={ReactImage} className='h-16 w-16' delay={0.2}></Skill>
+                <Skill name='TypeScript' image={TSImage} delay={0.2}></Skill>
+                <Skill name='Tailwind CSS' image={TailwindImage} className='h-16 w-16' delay={0.4}></Skill>
+                <Skill name='PostgreSQL' image={PostgresImage} className='h-16 w-16' delay={0.4}></Skill>
+                <Skill name='Vercel' image={VercelImage} className='h-14 w-16' delay={0.4}></Skill>
             </div>
         </div>
     )
