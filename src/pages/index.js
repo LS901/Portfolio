@@ -8,6 +8,7 @@ import GetInTouch from "@/components/GetInTouch";
 import Banner from "@/components/Banner";
 import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
+import PostLaunchSupport from "@/components/PostLaunchSupport";
 
 const MotionLink = motion(Link)
 
@@ -45,13 +46,14 @@ export default function Home() {
                     </div>
           <Services />
           <Pricing />
-                    <div className='grid grid-cols-2 laptop:grid-cols-1 px-12 tablet:px-6'>
+          <PostLaunchSupport />
+                    <div className='grid grid-cols-2 laptop:grid-cols-1 px-12 tablet:px-6 gap-8 mb-24 laptop:mb-12'>
                         <motion.div
                             variants={variant}
                             initial='hidden'
                             whileInView='visible'
                             viewport={{ once: true }}
-                            className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:mr-0 mr-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
+                            className='shadow-2xl flex flex-col items-start justify-end h-[600px] bg-background bg-center rounded-xl p-8'>
                             <h1 className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'>Projects</h1>
                             <p className='pt-3 font-thin text-lightGrey text-xl text-left laptop:!text-2xl'>A selection of professional product work and personal builds that reflect how I approach front-end engineering.</p>
                             <MotionLink href="/projects"
@@ -64,7 +66,7 @@ export default function Home() {
                             initial='hidden'
                             whileInView='visible'
                             viewport={{ once: true }}
-                            className='shadow-2xl flex flex-col items-start justify-end col-span-1 laptop:ml-0 ml-8 laptop:mb-12 mb-24 h-[600px] bg-background bg-center rounded-xl p-8'>
+                            className='shadow-2xl flex flex-col items-start justify-end h-[600px] bg-background bg-center rounded-xl p-8'>
                             <h1 className='font-extrabold text-lightGrey text-4xl text-left laptop:!text-3xl'>About</h1>
                             <p className='pt-3 font-thin text-lightGrey text-xl text-left laptop:!text-2xl'>More about my background, experience, and the feedback I&apos;ve received from people I&apos;ve worked with.</p>
                             <MotionLink href="/about"
