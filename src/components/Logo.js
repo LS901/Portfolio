@@ -2,7 +2,7 @@ import React from 'react';
 import Link from "next/link";
 import { motion } from 'framer-motion'
 
-const MotionLink = motion(Link)
+const MotionLink = motion.create(Link)
 const Logo = () => {
     return(
         <div className = 'flex items-center justify-center mt-1 laptop:-mt-1' >

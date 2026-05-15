@@ -1,6 +1,19 @@
 [
   {
+    "title": "Cadence",
+    "slug": "cadence",
+    "hasCaseStudy": true,
+    "primaryTechsUsed": ["Next.js", "TypeScript", "React", "Prisma", "PostgreSQL", "Auth.js", "Tailwind CSS", "Zod"],
+    "mainImage": "/images/projects/cadence/dashboard.png",
+    "tagLine": "A reflective wellbeing and behavioural-tracking product that unifies mood logging, habits, planning, journaling, life context, and evidence-aware personal insights.",
+    "uiLink": "https://cadence-wellbeing.dev/",
+    "gitLink": "https://github.com/LS901/cadence-app",
+    "responsive": "Yes"
+  },
+  {
     "title": "ParkPulse",
+    "slug": "parkpulse",
+    "hasCaseStudy": true,
     "primaryTechsUsed": ["TypeScript", "React", "Node.js", "Express", "Tailwind CSS", "DaisyUI", "Vite"],
     "mainImage": "/images/projects/parkpulse/main.png",
     "tagLine": "A crowd prediction and visit planning tool for UK theme parks. Combines weather, school holidays, events, and ride data to forecast busyness and generate personalised itineraries for Alton Towers, Thorpe Park, Chessington, and LEGOLAND Windsor.",
@@ -10,6 +23,8 @@
   },
   {
     "title": "Shopkeeper",
+    "slug": "shopkeeper",
+    "hasCaseStudy": false,
     "primaryTechsUsed": ["JavaScript", "React", "Tailwind CSS", "Framer Motion", "REST APIs", "Vitest"],
     "mainImage": "/images/projects/shopkeeper/main2.png",
     "tagLine": "A polished React single-page application built with Vite and tested with Vitest, showcasing client-side architecture, API integration, and responsive UI design.",
@@ -19,6 +34,8 @@
   },
   {
     "title": "To-do List/Habit Tracker",
+    "slug": "habit-tracker",
+    "hasCaseStudy": false,
     "primaryTechsUsed": ["JavaScript", "React", "Tailwind CSS", "Framer Motion", "RadixUI", "Local Storage"],
     "mainImage": "/images/projects/habittracker/main.png",
     "tagLine": "A React application for managing tasks and building habits, featuring complex state management and structured local storage persistence.",
@@ -28,6 +45,8 @@
   },
   {
     "title": "Static Dashboard",
+    "slug": "static-dashboard",
+    "hasCaseStudy": false,
     "primaryTechsUsed": ["HTML", "CSS", "Tailwind CSS"],
     "mainImage": "/images/projects/dashboard/main.png",
     "tagLine": "A static dashboard layout built to demonstrate clean visual structure, spacing, and responsive grid techniques using HTML, CSS, and Tailwind.",

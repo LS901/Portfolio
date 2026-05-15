@@ -26,17 +26,21 @@ const Details = ({position, company, companyLink, time, location, work, delay}) 
     <motion.li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] tablet:w-full mx-auto flex flex-col items-center justify-between'
                variants={experienceTransition(delay)}
                whileInView='visible'
-               viewport={{ once: true}}
+               viewport={{ once: true, amount: 0.05}}
                initial='hidden'>
         <div>
-            <h3 className='font-rubik capitalize font-bold text-2xl tablet:text-xl'>{position}&nbsp;<a href={companyLink}
-            target="_blank"
-            className="capitalize font-extra-boldbold"
-            >@{company}</a></h3>
-            <span className='text-orange font-montLight capitalize font-extrabold' >
-                {time} | {location}
-            </span>
-            <p className='font-montLight font-medium w-full'>
+            <h3 className='font-rubik capitalize font-bold text-2xl tablet:text-xl'>
+                {position}&nbsp;
+                <a href={companyLink}
+                   target="_blank"
+                   rel="noreferrer"
+                   className="capitalize font-extrabold text-orange hover:underline"
+                >@{company}</a>
+            </h3>
+            <p className='text-darkGrey/70 font-montLight font-medium mt-1 mb-3'>
+                <time>{time}</time> &middot; {location}
+            </p>
+            <p className='font-montLight font-medium w-full leading-7 text-dark/85'>
                 {work}
             </p>
         </div>
@@ -83,7 +87,7 @@ const Experience = () => {
                     company="ITV"
                     time="2022-2024"
                     location="London, UK"
-                    companyLink="www.itvx.com"
+                    companyLink="https://www.itv.com/itvx"
                     work="Taking part in the development of responsive and user-friendly web applications, ensuring a
                          seamless user experience across these different applications working on ITVX Browser, ITVX
                          Connected TV & the ITV News website. Collaborating with UX/UI designers to translate design mockups and
@@ -95,7 +99,7 @@ const Experience = () => {
                     company="ITV"
                     time="2020-2022"
                     location="London, UK"
-                    companyLink="www.itvx.com"
+                    companyLink="https://www.itv.com/itvx"
                     work="Oversee the QA process for Account Management on the ITV Hub.
                           Contributing to, and maintaining, automated testing frameworks for ITV web & mobile
                           applications, ensuring comprehensive coverage of functional and non-functional requirements. Ruby was the main tech used in this role."
@@ -106,7 +110,7 @@ const Experience = () => {
                     company="ITV"
                     time="2019-2020"
                     location="London, UK"
-                    companyLink="www.itvx.com"
+                    companyLink="https://www.itv.com/itvx"
                     work="Rotate around a variety of different departments to obtain a deeper understanding of different
                           technology stacks and to understand the infrastructure of ITV, gaining context on how different
                           teams/departments work together."
@@ -115,7 +119,7 @@ const Experience = () => {
             <motion.p className='mt-24 p-5 text-center'
                       variants={experienceTransition(1)}
                       whileInView='visible'
-                      viewport={{ once: true}}
+                      viewport={{ once: true, amount: 0.05}}
                       initial='hidden'>For further details of my past experience or to discuss working together, feel free to <Link href="mailto:lewissaunders.dev@gmail.com"><strong className='hover:underline cursor-pointer text-orange'>Get in Touch</strong></Link>.
             </motion.p>
         </div>

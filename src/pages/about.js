@@ -1,92 +1,99 @@
-import React, {useEffect, useRef} from 'react';
-import Head from "next/head";
-import Image from 'next/image'
-import profilePicture from '../../public/images/profile/about-me-image.png'
-import { useInView, useMotionValue, useSpring } from "framer-motion";
-import Experience from "@/components/Experience";
-import Recommendations from "@/components/Recommendations";
-import Transition from "@/components/Transition";
-import Banner from "@/components/Banner";
-import GetInTouch from "@/components/GetInTouch";
+import React, { useEffect, useRef } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import profilePicture from '../../public/images/profile/about-me-image.png';
+import { useInView, useMotionValue, useSpring } from 'framer-motion';
+import Experience from '@/components/Experience';
+import Recommendations from '@/components/Recommendations';
+import Transition from '@/components/Transition';
+import GetInTouch from '@/components/GetInTouch';
+import PageHero from '@/components/PageHero';
+import Card from '@/components/ui/Card';
 
 const AnimatedNumbers = ({value}) => {
     const ref = useRef(null);
     const motionValue = useMotionValue(0);
-    const springValue = useSpring(motionValue,{ duration: 5000 });
-    const isInView = useInView(ref, {once:true});
+    const springValue = useSpring(motionValue, {duration: 5000});
+    const isInView = useInView(ref, {once: true});
 
     useEffect(() => {
-        if(isInView) {
-            motionValue.set(value);
-        }
-    },[isInView, value, motionValue])
+        if (isInView) motionValue.set(value);
+    }, [isInView, value, motionValue]);
 
     useEffect(() => {
-        const unsubscribe = springValue.on("change", (latest) => {
-            if(ref.current && latest.toFixed(0) <= value){
+        const unsubscribe = springValue.on('change', (latest) => {
+            if (ref.current && latest.toFixed(0) <= value) {
                 ref.current.textContent = latest.toFixed(0);
             }
         });
-
         return () => unsubscribe();
-    },[springValue, value])
+    }, [springValue, value]);
 
-    return (
-        <span ref={ref}></span>
-    )
-}
-const about = () => {
+    return <span ref={ref}>0</span>;
+};
+
+const stats = [
+    { prefix: '~', value: 8, suffix: 'M', label: 'Monthly users on ITV News' },
+    { prefix: '', value: 5, suffix: '+', label: 'Years as a software engineer' },
+    { prefix: '', value: 3, suffix: '', label: 'Industries worked across' }
+];
+
+const About = () => {
     return (
         <>
             <Head>
-                <title>Lewis Saunders | About Me</title>
-                <meta name='description' content='Learn more about Lewis Saunders, his full-stack engineering experience, and the teams and products he has helped shape.'/>
+                <title>About | Lewis Saunders</title>
+                <meta name='description' content='Learn more about Lewis Saunders, his full-stack engineering experience, and the teams and products he has helped shape.' />
             </Head>
             <Transition />
-            <main className='flex w-full flex-col items-center justify-center'>
-                <Banner heading={"A little more about me"} className='w-screen laptop:max-h-[300px] !h-[500px]'/>
-                    <div className='grid w-full grid-cols-9 gap-16 py-12 px-16 desktop:grid-cols-1 desktop:items-center bg-lightGrey'>
-                        <div className='laptop:py-4 col-span-6 flex flex-col items-start desktop:order-2 desktop:col-span-1'>
-                            <div className='flex items-center'>
-                                <h1 className='font-rubik py-5 font-extrabold tablet:text-2xl text-3xl mr-3'>Hi, I&apos;m Lewis</h1>
-                                <Image src='/waving-hand-sign.svg' alt='Waving hand' width={40} height={40} />
+            <main className='flex w-full flex-col items-center bg-light text-dark'>
+                <PageHero
+                    eyebrow='About'
+                    title={<>Hi, I&rsquo;m Lewis</>}
+                    description={<>Full-stack engineer running a freelance technical consultancy &mdash; building responsive, scalable, and beautifully designed digital products with React, Next.js, TypeScript, and PostgreSQL.</>}
+                />
+
+                {/* Bio */}
+                <section className='w-full px-8 pt-16 pb-12 laptop:px-6 tablet:px-5 tablet:pt-12'>
+                    <div className='mx-auto grid max-w-6xl grid-cols-12 gap-12 desktop:grid-cols-1 desktop:gap-8'>
+                        <div className='col-span-7 desktop:col-span-1 flex flex-col justify-center'>
+                            <div className='space-y-4 font-montLight text-base leading-7 text-dark/80'>
+                                <p>I&apos;ve spent the last five-plus years across media, insurance, and health technology, turning complex product goals into polished, production-ready applications.</p>
+                                <p>My core technical stack involves React, Next.js, TypeScript, Tailwind CSS, PostgreSQL, and Vercel. I care deeply about modern web architecture &mdash; ensuring blazingly fast load times via React Server Components, clean API integrations with Next.js, and accessible user interfaces.</p>
+                                <p>I currently partner with founders, agencies, and small businesses to deliver full-stack website creation, architectural audits, and embedded MVP development.</p>
                             </div>
-                            <p className='font-montLight'>I&apos;m a full-stack engineer running a freelance technical consultancy, focused on building responsive, scalable, and beautifully designed digital products. With over five years of experience across media, insurance, and health technology, I&apos;ve developed a strong technical foundation to turn complex product goals into polished, production-ready applications.</p>
-                            <p className='font-montLight my-4'>My core technical stack involves React, Next.js, TypeScript, Tailwind CSS, PostgreSQL, and Vercel. I care deeply about modern web architecture—ensuring blazingly fast load times via React Server Components, clean API integrations with Next.js, and perfectly accessible user interfaces.</p>
-                            <p className='font-montLight'>Currently, I partner directly with founders, agencies, and small businesses to deliver full-stack website creation, architectural audits, and embedded MVP development. If you need a dependable, communicative engineering partner to bring your vision online without the overhead of a full-time hire, I&apos;d love to help.</p>
                         </div>
-                        <div className='mx-14 col-span-3 self-center flex h-max p-2 shadow-2xl desktop:hidden'>
-                            <Image src={profilePicture} alt='Lewis Saunders' className='w-full h-auto rounded-xl desktop:order-1'></Image>
+                        <div className='col-span-5 desktop:col-span-1'>
+                            <div
+                                className='relative overflow-hidden rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-dark/5'
+                                style={{ width: '100%', maxWidth: '320px', marginLeft: 'auto', marginRight: 'auto' }}
+                            >
+                                <Image src={profilePicture} alt='Lewis Saunders' className='h-auto w-full' priority />
+                            </div>
                         </div>
                     </div>
-                <div className='w-full p-12 flex items-center justify-between bg-lightGrey'>
-                    <div className='flex flex-col items-end justify-center desktop:items-center tablet:!justify-start'>
-                                <span className='inline-block text-7xl font-bold tablet:!text-3xl desktop:text-5xl'>
-                                    ~<AnimatedNumbers value={8} />M
-                                </span>
-                        <h2 className='text-xl font-medium text-dark/75 desktop:text-center desktop:text-medium tablet:!text-small'>Monthly users on ITV News</h2>
+                </section>
+
+                {/* Stats */}
+                <section className='w-full px-8 py-10 laptop:px-6 tablet:px-5'>
+                    <div className='mx-auto grid max-w-6xl grid-cols-3 gap-6 tablet:grid-cols-1'>
+                        {stats.map((s) => (
+                            <Card key={s.label} tone='light' padding='lg'>
+                                <p className='font-rubik text-5xl font-extrabold text-dark tablet:text-4xl'>
+                                    {s.prefix}<AnimatedNumbers value={s.value} />{s.suffix}
+                                </p>
+                                <p className='mt-2 font-montLight text-sm text-dark/65'>{s.label}</p>
+                            </Card>
+                        ))}
                     </div>
-                    <div className='flex flex-col items-end justify-center desktop:items-center desktop:self-start'>
-                                <span className='inline-block text-7xl font-bold desktop:text-5xl tablet:!text-3xl'>
-                                    <AnimatedNumbers value={5} />+
-                                </span>
-                        <h2 className='text-xl font-medium text-dark/75 desktop:text-center desktop:text-medium tablet:!text-small'>Years as a software engineer</h2>
-                    </div>
-                    <div className='flex flex-col items-end justify-center desktop:items-center'>
-                                <span className='inline-block text-7xl font-bold desktop:text-5xl tablet:!text-3xl'>
-                                    <AnimatedNumbers value={3} />
-                                </span>
-                        <h2 className='text-xl font-medium text-dark/75 text-right desktop:text-center desktop:text-medium tablet:!text-small'>Industries worked across</h2>
-                    </div>
-                </div>
+                </section>
+
                 <Recommendations />
                 <Experience />
-                <div className='bg-lightGrey w-full'>
-                    <GetInTouch />
-                </div>
+                <GetInTouch />
             </main>
         </>
-    )
-}
+    );
+};
 
-export default about
+export default About;

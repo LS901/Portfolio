@@ -1,122 +1,140 @@
-import Head from 'next/head';
 import React, {useState} from 'react';
+import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 import Transition from "@/components/Transition";
-import Banner from "@/components/Banner";
 import ProjectType from "@/components/ProjectType";
-import itvData from '../metadata/itv-project-data.json'
-import personalData from '../metadata/personal-project-data.json'
+import PageHero from "@/components/PageHero";
+import Button from "@/components/ui/Button";
+import Card from "@/components/ui/Card";
+import personalProjects from "@/metadata/personal-project-data.json";
+import professionalProjects from "@/metadata/itv-project-data.json";
 
-const MotionLink = motion(Link);
-const FeaturedProject = ({ title, summary, image, skills, index, uiLink, gitLink, responsive, isPersonal = false }) => {
-    return(
-        <article
-        className = {`w-full flex flex-col items-center flex bg-light/90 shadow-2xl p-12 tablet:p-10 pt-16`}>
-            <motion.div
-                variants={variant}
-                initial='hidden'
-                whileInView='visible'
+const TechChips = ({items, tone = 'light'}) => (
+    <ul className='mt-4 flex flex-wrap gap-1.5'>
+        {items.map((tech) => (
+            <li
+                key={tech}
+                className={`font-rubik rounded-full px-2.5 py-1 text-[11px] font-semibold tracking-wide ${tone === 'dark' ? 'bg-light/10 text-light/85' : 'bg-dark/5 text-dark/70'}`}
             >
-                <Image width={0} height={0} sizes="100vw" src={`${image}`} alt={title} className={`w-[100%] h-auto transition-opacity aspect-auto shadow-2xl rounded-lg`} />
-                <div className=''>
-                    <div className='row-span-1'>
-                        <h2 className='font-rubik my-5 w-full text-left text-4xl font-extrabold py-2 '>{title}</h2>
-                        <p className='font-rubik mb-4 font-medium text-dark'>{summary}</p>
-                        {responsive === 'Yes' && <p className='font-rubik mb-4 font-medium text-dark'><em>Responsive build</em></p>}
-                        <div className='flex flex-wrap font-light text-orange'>
-                            {skills.map((e,index) => (
-                                <React.Fragment key={`${title}-${e}`}>
-                                    <span className='pr-4'>{e}</span>
-                                    {skills.length - 1 !== index && (
-                                        <span className='!pr-4'>|</span>
-                                    )}
-                                </React.Fragment>
-                            ))}
-                        </div>
-                        <div className='flex'>
-                            <MotionLink href={uiLink} target={"_blank"}
-                                        className='font-extrabold rounded-3xl py-6 mr-6 text-white w-[150px] bg-orange h-2 my-8 flex items-center justify-center'
-                                        whileHover={{scale: 1.1}}
-                            >UI</MotionLink>
-                            {isPersonal && (
-                            <MotionLink href={gitLink} target={"_blank"}
-                                       className='font-extrabold rounded-3xl py-6 text-white w-[150px] bg-orange h-2 my-8 flex items-center justify-center'
-                                       whileHover={{scale: 1.1}}
-                            >Code</MotionLink>
-                            )}
-                        </div>
+                {tech}
+            </li>
+        ))}
+    </ul>
+);
+
+const ProjectMedia = ({src, alt, ratio = 'aspect-[16/10]'}) => {
+    if (src) {
+        return (
+            <div className={`relative w-full ${ratio} overflow-hidden rounded-2xl bg-dark/5`}>
+                <Image src={src} alt={alt} fill sizes='(max-width: 1024px) 100vw, 50vw' className='object-cover' />
+            </div>
+        );
+    }
+    return (
+        <div
+            className={`relative flex w-full items-center justify-center overflow-hidden rounded-2xl ${ratio}`}
+            style={{background: 'radial-gradient(120% 120% at 0% 0%, #0a3247 0%, #041e2b 60%, #021018 100%)'}}
+        >
+            <span className='font-rubik text-sm font-semibold uppercase tracking-[0.3em] text-light/60'>Preview coming soon</span>
+        </div>
+    );
+};
+
+const PersonalCard = ({project, featured}) => {
+    const caseStudyHref = project.hasCaseStudy ? `/projects/${project.slug}` : null;
+    const titleNode = caseStudyHref
+        ? <Link href={caseStudyHref} className='hover:text-orange transition-colors'>{project.title}</Link>
+        : project.title;
+
+    return (
+        <Card padding='lg' tone='light' className={featured ? 'grid grid-cols-2 gap-8 laptop:grid-cols-1' : ''}>
+                <ProjectMedia src={project.mainImage} alt={`${project.title} preview`} ratio={featured ? 'aspect-[4/3]' : 'aspect-[16/10]'} />
+                <div className={featured ? 'flex flex-col justify-center' : 'mt-6'}>
+                    {project.hasCaseStudy && (
+                        <p className='font-rubik text-xs font-semibold uppercase tracking-[0.25em] text-orange'>Case study</p>
+                    )}
+                    <h3 className={`font-rubik mt-2 font-extrabold text-dark ${featured ? 'text-3xl' : 'text-xl'}`}>{titleNode}</h3>
+                    <p className={`mt-3 font-montLight leading-7 text-dark/75 ${featured ? 'text-base' : 'text-sm'}`}>{project.tagLine}</p>
+                    <TechChips items={project.primaryTechsUsed} />
+                    <div className='mt-6 flex flex-wrap gap-3'>
+                        {caseStudyHref && <Button href={caseStudyHref} variant='primary' size='sm'>Read case study</Button>}
+                        {!caseStudyHref && project.uiLink && <Button href={project.uiLink} variant='primary' size='sm' external>Live site</Button>}
+                        {caseStudyHref && project.uiLink && <Button href={project.uiLink} variant='ghost' size='sm' external>Live site</Button>}
+                        {project.gitLink && <Button href={project.gitLink} variant='ghost' size='sm' external>GitHub</Button>}
                     </div>
                 </div>
-            </motion.div>
-
-        </article>
-    )
-}
-
-const variant = {
-    hidden: { opacity: 0, y:0 },
-    visible: { opacity: 100, y:0, transition: { duration: 0.5 }
-    }
+            </Card>
+    );
 };
-const Projects = () => {
-    const [activeProjectPage, setActiveProjectPage] = useState('professional');
-    const changeProjectType = (type) => {
-        setActiveProjectPage(type);
-    }
+
+const ProfessionalCard = ({project}) => (
+    <article
+        className='grid grid-cols-2 gap-10 laptop:grid-cols-1'
+    >
+        <ProjectMedia src={project.mainImage} alt={`${project.title} preview`} ratio='aspect-[4/3]' />
+        <div className='flex flex-col justify-center'>
+            <p className='font-rubik text-xs font-semibold uppercase tracking-[0.25em] text-orange'>Professional work</p>
+            <h3 className='font-rubik mt-2 text-3xl font-extrabold text-dark'>{project.title}</h3>
+            <p className='mt-3 font-montLight text-base leading-7 text-dark/75'>{project.tagLine}</p>
+            <TechChips items={project.primaryTechsUsed} />
+            {project.uiLink && (
+                <div className='mt-6'>
+                    <Button href={project.uiLink} variant='primary' size='sm' external>Visit site</Button>
+                </div>
+            )}
+        </div>
+    </article>
+);
+
+export default function Projects() {
+    const [projectPage, setProjectPage] = useState('personal');
+    const list = projectPage === 'personal' ? personalProjects : professionalProjects;
+    const [featured, ...rest] = list;
 
     return (
         <>
             <Head>
-                <title>Lewis Saunders | Projects Page</title>
-                <meta name="description" content="Selected full-stack and front-end projects by Lewis Saunders, covering production product work, Next.js architecture, and freelance MVP development."/>
+                <title>Projects | Lewis Saunders</title>
+                <meta name='description' content='Selected professional and personal product work by Lewis Saunders.' />
             </Head>
             <Transition />
-            <main className='font-montLight w-full flex flex-col items-center justify-center'>
-                    <Banner heading={"Projects"} className='w-screen laptop:max-h-[300px] !h-[500px]'/>
-                    <div className='w-full bg-lightGrey px-12 tablet:px-6 py-12 tablet:py-8'>
-                        <p className='max-w-4xl font-light text-lg leading-8'>This selection of work spans heavily trafficked public applications to independent MVPs. Whether you are hiring me for full-scale website creation, performance auditing, or headless CMS implementations, these case studies demonstrate the robust Next.js and React architecture I bring to all client work.</p>
+            <main className='flex flex-col items-center text-dark w-full bg-light'>
+                <PageHero
+                    eyebrow='Portfolio'
+                    title='Projects'
+                    description='Selected work from production teams and personal builds.'
+                />
+
+                <section className='w-full px-8 py-16 laptop:px-6 tablet:px-5 tablet:py-12'>
+                    <div className='mx-auto max-w-7xl'>
+                        <div className='mb-10 flex flex-wrap items-end justify-between gap-6'>
+                            <div className='max-w-2xl'>
+                                <p className='font-rubik text-xs font-semibold uppercase tracking-[0.3em] text-orange'>{projectPage === 'personal' ? 'Personal builds' : 'Professional work'}</p>
+                                <h2 className='font-rubik mt-2 text-3xl font-extrabold text-dark tablet:text-2xl'>{projectPage === 'personal' ? 'Side projects & experiments' : 'Production work'}</h2>
+                            </div>
+                            <ProjectType projectPage={projectPage} changeProjectType={setProjectPage} />
+                        </div>
+
+                        {projectPage === 'personal' ? (
+                            <div className='space-y-10'>
+                                <PersonalCard project={featured} featured />
+                                <div className='grid grid-cols-2 gap-8 laptop:grid-cols-1'>
+                                    {rest.map((p) => (
+                                        <PersonalCard key={p.slug || p.title} project={p} />
+                                    ))}
+                                </div>
+                            </div>
+                        ) : (
+                            <div className='space-y-16'>
+                                {list.map((p) => (
+                                    <ProfessionalCard key={p.title} project={p} />
+                                ))}
+                            </div>
+                        )}
                     </div>
-                    <ProjectType projectPage={activeProjectPage} changeProjectType={changeProjectType}/>
-                    <div className='flex flex-col w-full'>
-                        {activeProjectPage === 'professional' ? (
-                            itvData.map((p,index) => (
-                                <motion.div className='col-span-4'
-                                            key={p.title}
-                                            >
-                                    <FeaturedProject
-                                        title={p.title}
-                                        image={p.mainImage}
-                                        summary={p.tagLine}
-                                        uiLink={p.uiLink}
-                                        skills={p.primaryTechsUsed}
-                                        index={index}
-                                    />
-                                </motion.div>
-                            ))) : (
-                            personalData.map((p,index) => (
-                                <motion.div className='col-span-4'
-                                            key={p.title}
-                                            >
-                                    <FeaturedProject
-                                        title={p.title}
-                                        image={p.mainImage}
-                                        summary={p.tagLine}
-                                        uiLink={p.uiLink}
-                                        gitLink={p.gitLink}
-                                        skills={p.primaryTechsUsed}
-                                        index={index}
-                                        isPersonal
-                                        responsive={p.responsive}
-                                    />
-                                </motion.div>
-                        )))
-                    }
-                    </div>
+                </section>
             </main>
         </>
     );
 }
-
-export default Projects;

@@ -1,5 +1,4 @@
 import '../styles/globals.css'
-import '../styles/carousel.css';
 import { Montserrat, Rubik } from "next/font/google"
 import Head from "next/head";
 import NavBar from "@/components/NavBar";
@@ -24,15 +23,20 @@ export default function App({ Component, pageProps }) {
               <meta name="viewport" content="width=device-width, initial-scale=1" />
               <link rel="icon" href="/favicon.ico" />
           </Head>
-          <main className={`${rubik.variable} ${mont.variable} w-screen min-h-screen bg-background bg-contain`}>
-              <div className='p-6'>
-                  <NavBar />
+          <style jsx global>{`
+              :root {
+                  --font-rubik: ${rubik.style.fontFamily};
+                  --font-mont-light: ${mont.style.fontFamily};
+              }
+          `}</style>
+          <div className={`${rubik.variable} ${mont.variable} w-screen min-h-screen flex flex-col bg-light`}>
+              <a href="#main-content" className="skip-link">Skip to content</a>
+              <NavBar />
+              <div id="main-content" className="flex-1">
+                  <Component {...pageProps} />
               </div>
-            <Component {...pageProps} />
-              <div className='p-6 bg-lightGrey'>
-                 <Footer></Footer>
-              </div>
-          </main>
+              <Footer />
+          </div>
       </>
   )
 }

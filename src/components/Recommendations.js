@@ -1,109 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import { User } from "@nextui-org/user";
+import React from 'react';
 import AnimatedText from "@/components/AnimatedText";
-import { motion } from 'framer-motion';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-const Recommendations = () => {
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [useCenterMode, setUseCenterMode] = useState(true);
+const testimonials = [
+    {
+        name: 'Julio Alves',
+        role: 'Lead Front End Engineer · ITV',
+        accent: 'bg-orange/85',
+        content: `I had the pleasure of working closely with Lewis for 2 years and have witnessed his remarkable growth as a frontend developer. Lewis has proven to be a reliable and resourceful member of the team, continuously pushing himself to improve and help the team reach its goals. Beyond his technical skills, Lewis excels in communication and collaboration, always maintaining a positive attitude and a proactive approach.`
+    },
+    {
+        name: 'Emily Giblett',
+        role: 'Core Front End Engineer · ITV',
+        accent: 'bg-darkGrey',
+        content: `Lewis is an absolute asset to our team, and it's a joy to work alongside him. He is incredibly diligent, patient and has great attention to detail, making him an excellent pairing companion. I've learnt a lot from our time working together, and I have no doubt that Lewis will make a similarly impactful contribution to any other engineering roles that he takes on in the future.`
+    },
+    {
+        name: 'Iain Smith',
+        role: 'Head of Product · News · ITV',
+        accent: 'bg-orange/85',
+        content: `Lewis has played a vital role in building ITV News' innovative digital services, including our market-leading news proposition on our ITVX streaming platform. He's a very skilled front-end developer who delivers high quality solutions that are used by millions of people. He combines these skills with a passion for detail and contributes great ideas for product development.`
+    },
+    {
+        name: 'Peter Hammans',
+        role: 'Senior UI Engineer · HDRUK',
+        accent: 'bg-darkGrey',
+        content: `Lewis worked in our team as a UI developer at Health Data Research UK with React and Next.js. He worked on our authentication / registration with Keycloak which was new tech, as well as many components both contributing to our component library and more complex features within the site. He turned round a lot of quality work in a short space of time and stayed in regular contact — essential qualities for a remote team.`
+    }
+];
 
-    useEffect(() => {
-        const handleResize = () => {
-            if (typeof window !== 'undefined') {
-                setUseCenterMode(window.innerWidth > 1024); // Disable center mode for tablets and smaller
-            }
-        };
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const testimonials = [
-        {
-            name: "Julio Alves",
-            description: "Lead Front End Engineer - ITV",
-            content: `I had the pleasure of working closely with Lewis for 2 years and have witnessed his remarkable growth as a frontend developer.
-                Lewis has proven to be a reliable and resourceful member of the team, continuously pushing himself to improve and help the team reach its goals.
-                Beyond his technical skills, Lewis excels in communication and collaboration, always maintaining a positive attitude and a proactive approach.
-                I highly recommend Lewis for any frontend development positions due to his technical skills, composure, and growth potential.`,
-            className: 'bg-orange/80'
-          },
-          {
-            name: "Emily Giblett",
-            description: "Core Front End Engineer - ITV",
-            content: `Lewis is an absolute asset to our team, and it's a joy to work alongside him. He is incredibly diligent,
-                patient and has great attention to detail, making him an excellent pairing companion.
-                I've learnt a lot from our time working together, and I have no doubt that Lewis will make a similarly
-                impactful contribution to any other engineering roles that he takes on in the future.`,
-            className: 'bg-orange/80'
-          },
-          {
-            name: "Iain Smith",
-            description: "Head Of Product - News - ITV",
-            content: `Lewis has played a vital role in building ITV News' innovative digital services,
-                including our market-leading news proposition on our ITVX streaming platform.
-                He's a very skilled front-end developer who delivers high quality solutions that are used by millions of people.
-                His work is of an excellent standard, and he has the ability to turn his hand to any challenge presented to him,
-                even with tight deadlines. Lewis combines these skills with a passion for detail, and contributes great ideas
-                for product development. Alongside this he's thoughtful and a pleasure to work with in the team -
-                he works well with all of his colleagues, he's fun and supportive of others.`,
-            className: 'bg-orange/80'
-          },
-          {
-            name: "Peter Hammans",
-            description: "Senior UI Engineer - HDRUK",
-            content: `Lewis worked in our team as a user interface developer at health data research uk with ReactJS and NextJS. He worked out our authentication / registration with in keycloak which was a new technology, as well as many other components both contributing to our component library and more complex features within the site. The whole project was on a very tight schedule so it was all hands to the pumps, but he turned round alot of quality work in a short space of time and also stayed in regular contact whether relating to work or more generally socially, which as a remote team are essential qualities to have. It's a real shame for him to be leaving us!`,
-            className: 'bg-blue-300'
-          }
-    ];
-
+const Initials = ({name, accent}) => {
+    const initials = name.split(' ').map(n => n[0]).join('');
     return (
-        <div className='bg-lightGrey p-8 w-screen'>
-            <AnimatedText 
-                text='Testimonials' 
-                className='font-rubik font-bold laptop:!text-2xl !text-3xl w-full text-center mb-8' 
-            />
-            <Carousel 
-                    showArrows={true}
-                    infiniteLoop={true}
-                    showThumbs={false}
-                    showStatus={false}
-                    autoPlay={true}
-                    interval={6000}
-                    centerMode={useCenterMode}
-                    centerSlidePercentage={80}
-                    emulateTouch={true}
-                    swipeable={true}
-                    className="custom-carousel"
-                    selectedItem={currentSlide}
-                    onChange={setCurrentSlide}
+        <span className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full ${accent} font-rubik text-sm font-bold text-white`}>
+            {initials}
+        </span>
+    );
+};
+
+const Recommendations = () => (
+    <section className='w-full overflow-hidden bg-lightGrey px-8 py-20 laptop:px-6 tablet:px-5 tablet:py-14'>
+        <div className='mx-auto max-w-7xl'>
+            <div className='mb-12 max-w-2xl'>
+                <p className='font-rubik text-xs font-semibold uppercase tracking-[0.3em] text-orange'>Testimonials</p>
+                <AnimatedText text='What people I&rsquo;ve worked with say' className='font-rubik mt-2 text-4xl font-extrabold !text-left text-dark tablet:!text-3xl' delay={0.2} />
+            </div>
+
+            <div
+                className='flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 pr-8'
+                style={{scrollbarWidth: 'thin'}}
             >
-                {testimonials.map((testimonial, index) => (
-                    <div key={index} className='px-4 pb-12'>
-                        <motion.div 
-                            className='p-10 tablet:p-6 rounded-2xl shadow-xl bg-white text-left flex flex-col'
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
-                        >
-                            <User
-                                name={testimonial.name}
-                                description={testimonial.description}
-                                className="justify-start pb-4"
-                                avatarProps={{
-                                    name: testimonial.name.split(' ').map(n => n[0]).join(''),
-                                    className: testimonial.className
-                                }}
-                            />
-                            <p className='py-2 font-montLight leading-7'>{testimonial.content}</p>
-                        </motion.div>
-                    </div>
+                {testimonials.map((t) => (
+                    <article
+                        key={t.name}
+                        className='snap-start flex w-[420px] tablet:w-[85vw] flex-shrink-0 flex-col rounded-2xl border border-dark/5 bg-white p-7 shadow-[0_8px_30px_rgba(0,0,0,0.04)]'
+                    >
+                        <div className='flex items-center gap-3'>
+                            <Initials name={t.name} accent={t.accent} />
+                            <div>
+                                <p className='font-rubik text-sm font-bold text-dark'>{t.name}</p>
+                                <p className='font-montLight text-xs text-dark/60'>{t.role}</p>
+                            </div>
+                        </div>
+                        <p className='font-montLight mt-5 text-sm leading-7 text-dark/80'>{t.content}</p>
+                    </article>
                 ))}
-            </Carousel>
+            </div>
         </div>
-    )
-}
+    </section>
+);
 
 export default Recommendations;
