@@ -1,69 +1,57 @@
-import React, {useRef} from 'react';
-import { motion } from 'framer-motion'
+import React from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import TSImage from '../../public/images/skills/Typescript_2020.svg.png';
 import TailwindImage from '../../public/images/skills/Tailwind.svg';
 import PostgresImage from '../../public/images/skills/PostgreSQL.svg';
 import NextImage from '../../public/images/skills/Next.jpg';
 import ReactImage from '../../public/images/skills/React-icon.svg.png';
 import VercelImage from '../../public/images/skills/Vercel.svg';
-
-import Image from 'next/image'
 import AnimatedText from "@/components/AnimatedText";
 
-const skillTransition = (y, delay) => {
-    return {
-        hidden: {
-            opacity: 0,
-            y
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                delay
-            }
-        }
-    }
-}
-const Skill = ({name, image, className, delay}) => {
-    const ref = useRef(null);
-    return (
-        <div className='flex flex-col items-center pb-8'>
-            <motion.div className='py-8 font-light text-2xl'
-                        variants={skillTransition(-50, delay)}
-                        whileInView='visible'
-                        viewport={{ once: true}}
-                        initial='hidden'
-                        animate='animate'>
-                <Image src={image} alt='skill' className={`h-20 w-20 ${className}`}></Image>
-            </motion.div>
-            <motion.div className='py-8 font-light text-2xl tablet:text-xl'
-                        variants={skillTransition(50, delay)}
-                        whileInView='visible'
-                        viewport={{ once: true}}
-                        initial='hidden'
-                        animate='animate'>
-                {name}
-            </motion.div>
-        </div>
+const skills = [
+    { name: 'Next.js', image: NextImage },
+    { name: 'React', image: ReactImage },
+    { name: 'TypeScript', image: TSImage },
+    { name: 'Tailwind CSS', image: TailwindImage },
+    { name: 'PostgreSQL', image: PostgresImage },
+    { name: 'Vercel', image: VercelImage },
+];
 
-    )
-}
+const Skill = ({name, image, index}) => (
+    <motion.div
+        className='group flex flex-col items-center justify-center gap-4 rounded-2xl bg-white border border-dark/5 px-4 py-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300'
+        initial={{opacity: 0, y: 16}}
+        whileInView={{opacity: 1, y: 0}}
+        viewport={{once: true, margin: '-50px'}}
+        transition={{duration: 0.4, delay: index * 0.05}}
+    >
+        <div className='relative h-12 w-12 flex items-center justify-center'>
+            <Image src={image} alt={`${name} logo`} className='h-full w-auto object-contain' />
+        </div>
+        <span className='font-rubik text-sm font-semibold text-dark text-center'>{name}</span>
+    </motion.div>
+);
+
 const Skills = () => {
     return (
-        <div className='px-10 flex flex-col font-rubik '>
-            <AnimatedText text='Primary Skills' className='text-3xl pb-5 w-full text-left tablet:!text-2xl font-extrabold' />
-            <div className='h-auto relative grid-cols-3 tablet:grid-cols-2 grid bg-gray-200 py-10 rounded-3xl shadow-2xl'>
-                <Skill name='Next.js' image={NextImage} delay={0.2}></Skill>
-                <Skill name='React' image={ReactImage} className='h-16 w-16' delay={0.2}></Skill>
-                <Skill name='TypeScript' image={TSImage} delay={0.2}></Skill>
-                <Skill name='Tailwind CSS' image={TailwindImage} className='h-16 w-16' delay={0.4}></Skill>
-                <Skill name='PostgreSQL' image={PostgresImage} className='h-16 w-16' delay={0.4}></Skill>
-                <Skill name='Vercel' image={VercelImage} className='h-14 w-16' delay={0.4}></Skill>
+        <section className='w-full px-8 py-16 laptop:px-6 tablet:px-5 tablet:py-12'>
+            <div className='mx-auto max-w-7xl'>
+                <div className='mb-10 max-w-2xl'>
+                    <p className='font-rubik text-xs font-semibold uppercase tracking-[0.3em] text-orange'>Tech Stack</p>
+                    <AnimatedText text='Primary skills' className='!text-3xl !text-left !font-extrabold mt-2 tablet:!text-2xl' />
+                    <p className='mt-3 font-montLight text-base leading-7 text-dark/70'>
+                        The day-to-day tools I reach for when shipping production-ready web products.
+                    </p>
+                </div>
+                <div className='grid grid-cols-6 gap-4 desktop:grid-cols-3 tablet:grid-cols-2'>
+                    {skills.map((s, i) => (
+                        <Skill key={s.name} name={s.name} image={s.image} index={i} />
+                    ))}
+                </div>
             </div>
-        </div>
-    )
-}
+        </section>
+    );
+};
 
-export default Skills
+export default Skills;
